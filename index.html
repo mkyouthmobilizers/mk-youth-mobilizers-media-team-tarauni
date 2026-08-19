@@ -1,189 +1,328 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>MK Youth Mobilizers</title>
-
-  <style>
-
-    * {
-
-      box-sizing: border-box;
-
-      margin: 0;
-
-      padding: 0;
-
-    }
-
-    body {
-
-      font-family: Arial, sans-serif;
-
-      background: #f5f5f5;
-
-      color: #222;
-
-      text-align: center;
-
-    }
-
-    header {
-
-      background: #0b6b3a;
-
-      color: white;
-
-      padding: 25px 15px;
-
-    }
-
-    header h1 {
-
-      font-size: 30px;
-
-      margin-bottom: 8px;
-
-    }
-
-    header p {
-
-      font-size: 16px;
-
-    }
-
-    .hero {
-
-      padding: 25px 15px;
-
-      background: white;
-
-    }
-
-    .hero img {
-
-      width: 100%;
-
-      max-width: 700px;
-
-      border-radius: 12px;
-
-      display: block;
-
-      margin: auto;
-
-    }
-
-    .content {
-
-      max-width: 800px;
-
-      margin: auto;
-
-      padding: 30px 20px;
-
-    }
-
-    .content h2 {
-
-      color: #0b6b3a;
-
-      margin-bottom: 15px;
-
-    }
-
-    .content p {
-
-      line-height: 1.7;
-
-      font-size: 17px;
-
-    }
-
-    .button {
-
-      display: inline-block;
-
-      margin-top: 25px;
-
-      padding: 13px 25px;
-
-      background: #0b6b3a;
-
-      color: white;
-
-      text-decoration: none;
-
-      border-radius: 8px;
-
-      font-weight: bold;
-
-    }
-
-    footer {
-
-      margin-top: 30px;
-
-      background: #222;
-
-      color: white;
-
-      padding: 20px;
-
-      font-size: 14px;
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MK Youth Mobilizers</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f4f7f5;
+  color:#222;
+  line-height:1.6;
+}
+
+header{
+  background:#075b32;
+  color:white;
+  text-align:center;
+  padding:18px 15px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+header h1{
+  font-size:25px;
+}
+
+header p{
+  font-size:14px;
+  margin-top:3px;
+}
+
+nav{
+  margin-top:12px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 7px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.hero{
+  background:white;
+  text-align:center;
+  padding:25px 15px;
+}
+
+.hero img{
+  width:100%;
+  max-width:750px;
+  border-radius:15px;
+  display:block;
+  margin:auto;
+}
+
+.hero h2{
+  color:#075b32;
+  font-size:30px;
+  margin-top:25px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:10px auto;
+  font-size:17px;
+}
+
+.button{
+  display:inline-block;
+  background:#075b32;
+  color:white;
+  text-decoration:none;
+  padding:13px 25px;
+  border-radius:8px;
+  margin-top:15px;
+  font-weight:bold;
+}
+
+section{
+  padding:55px 20px;
+  text-align:center;
+}
+
+section h2{
+  color:#075b32;
+  font-size:28px;
+  margin-bottom:18px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  flex:1 1 250px;
+}
+
+.card h3{
+  color:#075b32;
+  margin-bottom:10px;
+}
+
+.social a{
+  display:block;
+  max-width:400px;
+  margin:10px auto;
+  padding:13px;
+  border-radius:8px;
+  background:#075b32;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+footer{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+}
+
+.whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:bold;
+  box-shadow:0 3px 10px rgba(0,0,0,.25);
+  z-index:2000;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
+<header>
+  <h1>MK Youth Mobilizers</h1>
+  <p>Empowering Youth • Building the Future</p>
 
-    <h1>MK Youth Mobilizers</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#mission">Mission</a>
+    <a href="#activities">Activities</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <p>Empowering Youth • Building the Future</p>
+<section class="hero" id="home">
 
-  </header>
+  <img src="IMG_3240.jpeg" alt="MK Youth Mobilizers">
 
-  <section class="hero">
+  <h2>Welcome to MK Youth Mobilizers</h2>
 
-    <img src="IMG_3240.jpeg" alt="MK Youth Mobilizers">
+  <p>
+    MK Youth Mobilizers is a youth-focused platform dedicated to
+    connecting, inspiring and empowering young people.
+    We promote unity, leadership, teamwork and positive development.
+  </p>
 
-  </section>
+  <a class="button" href="#contact">Join Us</a>
 
-  <section class="content">
+</section>
 
-    <h2>Welcome to MK Youth Mobilizers</h2>
+<section id="about">
+  <div class="container">
+    <h2>About Us</h2>
 
     <p>
-
-      Welcome to the official platform of MK Youth Mobilizers.
-
-      This platform is created to connect, inspire and empower young people
-
-      while promoting unity, leadership and positive development.
-
+      MK Youth Mobilizers is a platform created to bring young people
+      together, encourage positive leadership and create opportunities
+      for youth participation and community development.
     </p>
+  </div>
+</section>
 
-    <a href="#" class="button">Join Us</a>
+<section id="mission">
+  <div class="container">
 
-  </section>
+    <h2>Our Mission</h2>
 
-  <footer>
+    <div class="cards">
 
-    © 2026 MK Youth Mobilizers. All Rights Reserved.
+      <div class="card">
+        <h3>Empowerment</h3>
+        <p>
+          To encourage young people to develop their skills,
+          confidence and leadership abilities.
+        </p>
+      </div>
 
-  </footer>
+      <div class="card">
+        <h3>Unity</h3>
+        <p>
+          To promote friendship, teamwork and unity among young people.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Development</h3>
+        <p>
+          To support positive activities that contribute to youth
+          and community development.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="activities">
+
+  <div class="container">
+
+    <h2>Our Activities</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Youth Mobilization</h3>
+        <p>
+          Connecting young people and encouraging active participation.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Community Development</h3>
+        <p>
+          Supporting activities that promote positive change in our communities.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Leadership</h3>
+        <p>
+          Encouraging responsible leadership and teamwork among young people.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact">
+
+  <div class="container">
+
+    <h2>Contact Us</h2>
+
+    <p>Connect with MK Youth Mobilizers through our platforms.</p>
+
+    <div class="social">
+
+      <a href="https://wa.me/2348127291098">
+        WhatsApp: 08127291098
+      </a>
+
+      <a href="https://wa.me/2348149415222">
+        WhatsApp: 08149415222
+      </a>
+
+      <a href="tel:08127291098">
+        Call: 08127291098
+      </a>
+
+      <a href="https://www.tiktok.com/@yaronmk1" target="_blank">
+        TikTok: @yaronmk1
+      </a>
+
+      <a href="https://www.facebook.com/share/1LQE4rKhHK/?mibextid=wwXIfr" target="_blank">
+        Facebook
+      </a>
+
+      <a href="https://www.instagram.com/king_youseeep/" target="_blank">
+        Instagram: @king_youseeep
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 MK Youth Mobilizers. All Rights Reserved.</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/2348127291098">
+  WhatsApp Us
+</a>
 
 </body>
-
 </html>
