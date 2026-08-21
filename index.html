@@ -18,7 +18,7 @@ html{
 }
 
 body{
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:#f4f7f5;
   color:#222;
   line-height:1.6;
@@ -53,10 +53,6 @@ nav a{
   margin:0 7px;
   font-size:14px;
   font-weight:bold;
-}
-
-nav a:hover{
-  text-decoration:underline;
 }
 
 .hero{
@@ -125,7 +121,6 @@ section h2{
   border-radius:12px;
   box-shadow:0 3px 12px rgba(0,0,0,.08);
   flex:1 1 250px;
-  text-align:left;
 }
 
 .card h3{
@@ -133,32 +128,29 @@ section h2{
   margin-bottom:10px;
 }
 
+.post-card{
+  width:100%;
+  max-width:700px;
+  text-align:left;
+}
+
 .post-image{
   width:100%;
-  max-height:300px;
+  max-height:350px;
   object-fit:cover;
   border-radius:10px;
   margin-bottom:15px;
 }
 
-.post-card{
-  width:100%;
-  max-width:700px;
-}
-
-.post-card p{
-  white-space:pre-wrap;
-}
-
 .loading{
-  text-align:center;
   width:100%;
+  text-align:center;
 }
 
 .error{
+  width:100%;
   color:#b00020;
   text-align:center;
-  width:100%;
 }
 
 .social a{
@@ -195,6 +187,7 @@ footer{
 }
 
 @media(max-width:600px){
+
   header h1{
     font-size:22px;
   }
@@ -218,263 +211,334 @@ footer{
 <body>
 
 <header>
-  <h1>MK Youth Mobilizers</h1>
-  <p>Empowering Youth • Building the Future</p>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#mission">Mission</a>
-    <a href="#activities">Activities</a>
-    <a href="#posts">Posts</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<h1>MK Youth Mobilizers</h1>
+
+<p>Empowering Youth • Building the Future</p>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#mission">Mission</a>
+<a href="#activities">Activities</a>
+<a href="#posts">Posts</a>
+<a href="#contact">Contact</a>
+</nav>
+
 </header>
+
 
 <section class="hero" id="home">
 
-  <img src="IMG_3240.jpeg" alt="MK Youth Mobilizers">
+<img src="IMG_3240.jpeg" alt="MK Youth Mobilizers">
 
-  <h2>Welcome to MK Youth Mobilizers</h2>
+<h2>Welcome to MK Youth Mobilizers</h2>
 
-  <p>
-    MK Youth Mobilizers is a youth-focused platform dedicated to
-    connecting, inspiring and empowering young people.
-    We promote unity, leadership, teamwork and positive development.
-  </p>
+<p>
+MK Youth Mobilizers is a youth-focused platform dedicated to
+connecting, inspiring and empowering young people.
+We promote unity, leadership, teamwork and positive development.
+</p>
 
-  <a class="button" href="#contact">Join Us</a>
+<a class="button" href="#contact">Join Us</a>
 
 </section>
+
 
 <section id="about">
-  <div class="container">
-    <h2>About Us</h2>
 
-    <p>
-      MK Youth Mobilizers is a platform created to bring young people
-      together, encourage positive leadership and create opportunities
-      for youth participation and community development.
-    </p>
-  </div>
+<div class="container">
+
+<h2>About Us</h2>
+
+<p>
+MK Youth Mobilizers is a platform created to bring young people
+together, encourage positive leadership and create opportunities
+for youth participation and community development.
+</p>
+
+</div>
+
 </section>
+
 
 <section id="mission">
-  <div class="container">
 
-    <h2>Our Mission</h2>
+<div class="container">
 
-    <div class="cards">
+<h2>Our Mission</h2>
 
-      <div class="card">
-        <h3>Empowerment</h3>
-        <p>
-          To encourage young people to develop their skills,
-          confidence and leadership abilities.
-        </p>
-      </div>
+<div class="cards">
 
-      <div class="card">
-        <h3>Unity</h3>
-        <p>
-          To promote friendship, teamwork and unity among young people.
-        </p>
-      </div>
+<div class="card">
+<h3>Empowerment</h3>
+<p>
+To encourage young people to develop their skills,
+confidence and leadership abilities.
+</p>
+</div>
 
-      <div class="card">
-        <h3>Development</h3>
-        <p>
-          To support positive activities that contribute to youth
-          and community development.
-        </p>
-      </div>
+<div class="card">
+<h3>Unity</h3>
+<p>
+To promote friendship, teamwork and unity among young people.
+</p>
+</div>
 
-    </div>
+<div class="card">
+<h3>Development</h3>
+<p>
+To support positive activities that contribute to youth
+and community development.
+</p>
+</div>
 
-  </div>
+</div>
+
+</div>
+
 </section>
+
 
 <section id="activities">
 
-  <div class="container">
+<div class="container">
 
-    <h2>Our Activities</h2>
+<h2>Our Activities</h2>
 
-    <div class="cards">
+<div class="cards">
 
-      <div class="card">
-        <h3>Youth Mobilization</h3>
-        <p>
-          Connecting young people and encouraging active participation.
-        </p>
-      </div>
+<div class="card">
+<h3>Youth Mobilization</h3>
+<p>
+Connecting young people and encouraging active participation.
+</p>
+</div>
 
-      <div class="card">
-        <h3>Community Development</h3>
-        <p>
-          Supporting activities that promote positive change in our communities.
-        </p>
-      </div>
+<div class="card">
+<h3>Community Development</h3>
+<p>
+Supporting activities that promote positive change in our communities.
+</p>
+</div>
 
-      <div class="card">
-        <h3>Leadership</h3>
-        <p>
-          Encouraging responsible leadership and teamwork among young people.
-        </p>
-      </div>
+<div class="card">
+<h3>Leadership</h3>
+<p>
+Encouraging responsible leadership and teamwork among young people.
+</p>
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
-<!-- POSTS FROM SUPABASE -->
+
 <section id="posts">
 
-  <div class="container">
+<div class="container">
 
-    <h2>Latest Posts</h2>
+<h2>Latest Posts</h2>
 
-    <div id="posts-container" class="cards">
-      <p class="loading">Loading posts...</p>
-    </div>
+<div id="posts-container" class="cards">
 
-  </div>
+<p class="loading">Loading posts...</p>
+
+</div>
+
+</div>
 
 </section>
+
 
 <section id="contact">
 
-  <div class="container">
+<div class="container">
 
-    <h2>Contact Us</h2>
+<h2>Contact Us</h2>
 
-    <p>Connect with MK Youth Mobilizers through our platforms.</p>
+<p>
+Connect with MK Youth Mobilizers through our platforms.
+</p>
 
-    <div class="social">
+<div class="social">
 
-      <a href="https://wa.me/2348127291098">
-        WhatsApp: 08127291098
-      </a>
+<a href="https://wa.me/2348127291098">
+WhatsApp: 08127291098
+</a>
 
-      <a href="https://wa.me/2348149415222">
-        WhatsApp: 08149415222
-      </a>
+<a href="https://wa.me/2348149415222">
+WhatsApp: 08149415222
+</a>
 
-      <a href="tel:08127291098">
-        Call: 08127291098
-      </a>
+<a href="tel:08127291098">
+Call: 08127291098
+</a>
 
-      <a href="https://www.tiktok.com/@yaronmk1" target="_blank">
-        TikTok: @yaronmk1
-      </a>
+<a href="https://www.tiktok.com/@yaronmk1" target="_blank">
+TikTok: @yaronmk1
+</a>
 
-      <a href="https://www.facebook.com/share/1LQE4rKhHK/?mibextid=wwXIfr" target="_blank">
-        Facebook
-      </a>
+<a href="https://www.facebook.com/share/1LQE4rKhHK/?mibextid=wwXIfr" target="_blank">
+Facebook
+</a>
 
-      <a href="https://www.instagram.com/king_youseeep/" target="_blank">
-        Instagram: @king_youseeep
-      </a>
+<a href="https://www.instagram.com/king_youseeep/" target="_blank">
+Instagram: @king_youseeep
+</a>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
+
 <footer>
-  <p>© 2026 MK Youth Mobilizers. All Rights Reserved.</p>
+
+<p>
+© 2026 MK Youth Mobilizers. All Rights Reserved.
+</p>
+
 </footer>
 
+
 <a class="whatsapp" href="https://wa.me/2348127291098">
-  WhatsApp Us
+WhatsApp Us
 </a>
+
 
 <script>
 
-const SUPABASE_URL = "https://kszficrcngxipcllezgl.supabase.co";
+const SUPABASE_URL =
+"https://kszficrcngxipcllezgl.supabase.co";
 
-const SUPABASE_KEY = "sb_publishable_hsMkfMvXMbAXXt8Z7LvAvg_52miDaJe";
+const SUPABASE_KEY =
+"sb_publishable_hsMkfMvXMbAXXt8Z7LvAvg_52miDaJe";
+
 
 async function loadPosts(){
 
-  const container = document.getElementById("posts-container");
+const container =
+document.getElementById("posts-container");
 
-  try{
+try{
 
-    const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/Posts?select=Title,Content,Image_url,id&order=id.desc`,
-      {
-        method:"GET",
-        headers:{
-          "apikey":SUPABASE_KEY,
-          "Authorization":`Bearer ${SUPABASE_KEY}`,
-          "Content-Type":"application/json"
-        }
-      }
-    );
+const response = await fetch(
 
-    if(!response.ok){
-      throw new Error("Failed to load posts");
-    }
+`${SUPABASE_URL}/rest/v1/posts?select=Title,Content,Image_url,id&order=id.desc`,
 
-    const posts = await response.json();
+{
+method:"GET",
 
-    container.innerHTML = "";
-
-    if(posts.length === 0){
-
-      container.innerHTML = `
-        <p class="loading">
-          No posts available yet.
-        </p>
-      `;
-
-      return;
-    }
-
-    posts.forEach(post => {
-
-      const card = document.createElement("div");
-      card.className = "card post-card";
-
-      if(post.Image_url){
-
-        const image = document.createElement("img");
-
-        image.className = "post-image";
-        image.src = post.Image_url;
-        image.alt = post.Title || "MK Youth Mobilizers post";
-
-        card.appendChild(image);
-      }
-
-      const title = document.createElement("h3");
-      title.textContent = post.Title || "";
-
-      const content = document.createElement("p");
-      content.textContent = post.Content || "";
-
-      card.appendChild(title);
-      card.appendChild(content);
-
-      container.appendChild(card);
-
-    });
-
-  }catch(error){
-
-    console.error(error);
-
-    container.innerHTML = `
-      <p class="error">
-        Unable to load posts at the moment.
-      </p>
-    `;
-  }
+headers:{
+"apikey":SUPABASE_KEY,
+"Authorization":"Bearer " + SUPABASE_KEY,
+"Content-Type":"application/json"
 }
+
+}
+
+);
+
+
+if(!response.ok){
+
+const errorText = await response.text();
+
+console.error(errorText);
+
+throw new Error("Unable to load posts");
+
+}
+
+
+const posts = await response.json();
+
+
+container.innerHTML="";
+
+
+if(posts.length === 0){
+
+container.innerHTML=`
+<p class="loading">
+No posts available yet.
+</p>
+`;
+
+return;
+
+}
+
+
+posts.forEach(function(post){
+
+const card =
+document.createElement("div");
+
+card.className="card post-card";
+
+
+if(post.Image_url){
+
+const image =
+document.createElement("img");
+
+image.className="post-image";
+
+image.src=post.Image_url;
+
+image.alt=post.Title || "Post image";
+
+card.appendChild(image);
+
+}
+
+
+const title =
+document.createElement("h3");
+
+title.textContent =
+post.Title || "";
+
+card.appendChild(title);
+
+
+const content =
+document.createElement("p");
+
+content.textContent =
+post.Content || "";
+
+card.appendChild(content);
+
+
+container.appendChild(card);
+
+});
+
+}
+
+
+catch(error){
+
+console.error(error);
+
+container.innerHTML=`
+
+<p class="error">
+Unable to load posts at the moment.
+</p>
+
+`;
+
+}
+
+}
+
 
 loadPosts();
 
