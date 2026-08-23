@@ -4,389 +4,178 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MK Youth Mobilizers Media Team Tarauni</title>
+<title>MK Youth Mobilizers - Admin</title>
 
 <style>
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
   font-family:Arial,sans-serif;
   background:#f4f7f5;
+  padding:20px;
   color:#222;
-  line-height:1.6;
-}
-
-header{
-  background:#075b32;
-  color:white;
-  text-align:center;
-  padding:18px 15px;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-header h1{
-  font-size:25px;
-}
-
-header p{
-  font-size:14px;
-  margin-top:3px;
-}
-
-nav{
-  margin-top:12px;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin:0 7px;
-  font-size:14px;
-  font-weight:bold;
-}
-
-.hero{
-  background:white;
-  text-align:center;
-  padding:25px 15px;
-}
-
-.hero img{
-  width:100%;
-  max-width:750px;
-  border-radius:15px;
-  display:block;
-  margin:auto;
-}
-
-.hero h2{
-  color:#075b32;
-  font-size:30px;
-  margin-top:25px;
-}
-
-.hero p{
-  max-width:700px;
-  margin:10px auto;
-  font-size:17px;
-}
-
-.button{
-  display:inline-block;
-  background:#075b32;
-  color:white;
-  text-decoration:none;
-  padding:13px 25px;
-  border-radius:8px;
-  margin-top:15px;
-  font-weight:bold;
-}
-
-section{
-  padding:55px 20px;
-  text-align:center;
-}
-
-section h2{
-  color:#075b32;
-  font-size:28px;
-  margin-bottom:18px;
 }
 
 .container{
-  max-width:900px;
-  margin:auto;
-}
-
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:18px;
-}
-
-.card{
+  max-width:650px;
+  margin:30px auto;
   background:white;
   padding:25px;
-  border-radius:12px;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
-  flex:1 1 250px;
+  border-radius:15px;
+  box-shadow:0 4px 20px rgba(0,0,0,.1);
 }
 
-.card h3{
+h1{
   color:#075b32;
+  text-align:center;
   margin-bottom:10px;
 }
 
-.post-card{
-  width:100%;
-  max-width:700px;
-  text-align:left;
+.subtitle{
+  text-align:center;
+  margin-bottom:25px;
+  color:#666;
 }
 
-.post-image{
+label{
+  display:block;
+  font-weight:bold;
+  margin:15px 0 7px;
+}
+
+input,
+textarea{
+  width:100%;
+  padding:14px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:16px;
+}
+
+textarea{
+  min-height:150px;
+  resize:vertical;
+}
+
+input[type="file"]{
+  padding:12px;
+  background:#f5f5f5;
+}
+
+.preview{
+  margin-top:15px;
+  text-align:center;
+}
+
+.preview img,
+.preview video{
   width:100%;
   max-height:350px;
-  object-fit:cover;
+  object-fit:contain;
   border-radius:10px;
-  margin-bottom:15px;
 }
 
-.loading{
+button{
   width:100%;
-  text-align:center;
-}
-
-.error{
-  width:100%;
-  color:#b00020;
-  text-align:center;
-}
-
-.social a{
-  display:block;
-  max-width:400px;
-  margin:10px auto;
-  padding:13px;
+  margin-top:20px;
+  padding:15px;
+  border:0;
   border-radius:8px;
   background:#075b32;
   color:white;
-  text-decoration:none;
+  font-size:17px;
   font-weight:bold;
+  cursor:pointer;
 }
 
-footer{
-  background:#222;
-  color:white;
+button:disabled{
+  background:#999;
+}
+
+.message{
+  margin-top:18px;
   text-align:center;
-  padding:25px 15px;
-}
-
-.whatsapp{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  background:#25D366;
-  color:white;
-  text-decoration:none;
-  padding:14px 18px;
-  border-radius:50px;
   font-weight:bold;
-  box-shadow:0 3px 10px rgba(0,0,0,.25);
-  z-index:2000;
 }
 
-@media(max-width:600px){
+.success{
+  color:#087f23;
+}
 
-  header h1{
-    font-size:22px;
-  }
+.error{
+  color:#b00020;
+}
 
-  nav a{
-    font-size:13px;
-    margin:0 4px;
-  }
-
-  .hero h2{
-    font-size:25px;
-  }
-
-  section{
-    padding:45px 15px;
-  }
+.back{
+  display:block;
+  text-align:center;
+  margin-top:20px;
+  color:#075b32;
+  text-decoration:none;
+  font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<div class="container">
+
 <h1>MK Youth Mobilizers</h1>
-<p>Empowering Youth • Building the Future</p>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#mission">Mission</a>
-<a href="#activities">Activities</a>
-<a href="#posts">Posts</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<section class="hero" id="home">
-
-<img src="IMG_3240.jpeg" alt="MK Youth Mobilizers">
-
-<h2>Welcome to MK Youth Mobilizers</h2>
-
-<p>
-MK Youth Mobilizers is a youth-focused platform dedicated to
-connecting, inspiring and empowering young people.
-We promote unity, leadership, teamwork and positive development.
+<p class="subtitle">
+Create a new post
 </p>
 
-<a class="button" href="#contact">Join Us</a>
+<label for="title">
+Post Title
+</label>
 
-</section>
+<input
+  type="text"
+  id="title"
+  placeholder="Enter post title"
+>
 
-<section id="about">
-<div class="container">
+<label for="content">
+Post Content
+</label>
 
-<h2>About Us</h2>
+<textarea
+  id="content"
+  placeholder="Write your post here..."
+></textarea>
 
-<p>
-MK Youth Mobilizers is a platform created to bring young people
-together, encourage positive leadership and create opportunities
-for youth participation and community development.
-</p>
+<label for="media">
+Choose Photo or Video
+</label>
 
-</div>
-</section>
+<input
+  type="file"
+  id="media"
+  accept="image/*,video/*"
+>
 
-<section id="mission">
-<div class="container">
+<div id="preview" class="preview"></div>
 
-<h2>Our Mission</h2>
+<button id="publishBtn">
+Publish Post
+</button>
 
-<div class="cards">
+<div id="message" class="message"></div>
 
-<div class="card">
-<h3>Empowerment</h3>
-<p>
-To encourage young people to develop their skills,
-confidence and leadership abilities.
-</p>
-</div>
-
-<div class="card">
-<h3>Unity</h3>
-<p>
-To promote friendship, teamwork and unity among young people.
-</p>
-</div>
-
-<div class="card">
-<h3>Development</h3>
-<p>
-To support positive activities that contribute to youth
-and community development.
-</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section id="activities">
-<div class="container">
-
-<h2>Our Activities</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Youth Mobilization</h3>
-<p>
-Connecting young people and encouraging active participation.
-</p>
-</div>
-
-<div class="card">
-<h3>Community Development</h3>
-<p>
-Supporting activities that promote positive change in our communities.
-</p>
-</div>
-
-<div class="card">
-<h3>Leadership</h3>
-<p>
-Encouraging responsible leadership and teamwork among young people.
-</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section id="posts">
-
-<div class="container">
-
-<h2>Latest Posts</h2>
-
-<div id="posts-container" class="cards">
-
-<p class="loading">Loading posts...</p>
-
-</div>
-
-</div>
-</section>
-
-<section id="contact">
-
-<div class="container">
-
-<h2>Contact Us</h2>
-
-<p>
-Connect with MK Youth Mobilizers through our platforms.
-</p>
-
-<div class="social">
-
-<a href="https://wa.me/2348127291098">
-WhatsApp: 08127291098
-</a>
-
-<a href="https://wa.me/2348149415222">
-WhatsApp: 08149415222
-</a>
-
-<a href="tel:08127291098">
-Call: 08127291098
-</a>
-
-<a href="https://www.tiktok.com/@yaronmk1" target="_blank">
-TikTok: @yaronmk1
-</a>
-
-<a href="https://www.facebook.com/share/1LQE4rKhHK/?mibextid=wwXIfr" target="_blank">
-Facebook
-</a>
-
-<a href="https://www.instagram.com/king_youseeep/" target="_blank">
-Instagram: @king_youseeep
+<a
+  class="back"
+  href="index.html"
+>
+← Back to Website
 </a>
 
 </div>
-
-</div>
-</section>
-
-<footer>
-
-<p>
-© 2026 MK Youth Mobilizers. All Rights Reserved.
-</p>
-
-</footer>
-
-<a class="whatsapp" href="https://wa.me/2348127291098">
-WhatsApp Us
-</a>
 
 <script>
 
@@ -394,116 +183,256 @@ const SUPABASE_URL =
 "https://kszficrcngxipcllezgl.supabase.co";
 
 const SUPABASE_KEY =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzemZpY3Jjbmd4aXBjbGxlemdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxODk2NDAsImV4cCI6MjEwMjc2NTY0MH0.znhpjuYoWAqQmaOmreyq7m8X2KusGRg-eJUZrwGTiMg";
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzemZpY3Jjbmd4aXBjbGxlemdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxODk2NDAsImV4cCI6MjEwMjc2NTY0MH0.znhpjuYoWAqQmaOmrey7m8X2KusGRg-eJUZrwGTiMg";
 
-async function loadPosts(){
+const BUCKET =
+"post-media";
 
-const container =
-document.getElementById("posts-container");
+const titleInput =
+document.getElementById("title");
+
+const contentInput =
+document.getElementById("content");
+
+const mediaInput =
+document.getElementById("media");
+
+const preview =
+document.getElementById("preview");
+
+const publishBtn =
+document.getElementById("publishBtn");
+
+const message =
+document.getElementById("message");
+
+
+mediaInput.addEventListener("change", function(){
+
+preview.innerHTML="";
+
+const file =
+mediaInput.files[0];
+
+if(!file){
+return;
+}
+
+const url =
+URL.createObjectURL(file);
+
+if(file.type.startsWith("image/")){
+
+const img =
+document.createElement("img");
+
+img.src=url;
+
+preview.appendChild(img);
+
+}
+
+else if(file.type.startsWith("video/")){
+
+const video =
+document.createElement("video");
+
+video.src=url;
+video.controls=true;
+
+preview.appendChild(video);
+
+}
+
+});
+
+
+publishBtn.addEventListener("click", async function(){
+
+const title =
+titleInput.value.trim();
+
+const content =
+contentInput.value.trim();
+
+const file =
+mediaInput.files[0];
+
+if(!title){
+
+showMessage(
+"Please enter a post title.",
+"error"
+);
+
+return;
+}
+
+if(!content){
+
+showMessage(
+"Please enter post content.",
+"error"
+);
+
+return;
+}
+
+publishBtn.disabled=true;
+
+publishBtn.textContent="Publishing...";
 
 try{
 
-const response = await fetch(
-`${SUPABASE_URL}/rest/v1/posts?select=Title,Content,Image_url,id&order=id.desc`,
-{
-method:"GET",
+let mediaUrl = null;
+
+
+/* UPLOAD IMAGE OR VIDEO */
+
+if(file){
+
+const safeName =
+file.name
+.replace(/[^a-zA-Z0-9.-]/g,"-");
+
+const fileName =
+Date.now() + "-" + safeName;
+
+const uploadUrl =
+`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${fileName}`;
+
+const uploadResponse =
+await fetch(uploadUrl,{
+
+method:"POST",
 
 headers:{
 "apikey":SUPABASE_KEY,
-"Authorization":"Bearer " + SUPABASE_KEY
+"Authorization":
+"Bearer " + SUPABASE_KEY,
+"Content-Type":file.type
+},
+
+body:file
+
+});
+
+
+if(!uploadResponse.ok){
+
+const errorText =
+await uploadResponse.text();
+
+console.error(errorText);
+
+throw new Error(
+"Media upload failed."
+);
+
 }
+
+
+/* PUBLIC MEDIA URL */
+
+mediaUrl =
+`${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${fileName}`;
+
+}
+
+
+/* CREATE POST */
+
+const postResponse =
+await fetch(
+`${SUPABASE_URL}/rest/v1/posts`,
+{
+
+method:"POST",
+
+headers:{
+"apikey":SUPABASE_KEY,
+"Authorization":
+"Bearer " + SUPABASE_KEY,
+"Content-Type":
+"application/json",
+"Prefer":"return=representation"
+},
+
+body:JSON.stringify({
+
+Title:title,
+Content:content,
+Image_url:mediaUrl
+
+})
+
 }
 );
 
-if(!response.ok){
 
-const message = await response.text();
+if(!postResponse.ok){
 
-console.error("Supabase error:", message);
+const errorText =
+await postResponse.text();
 
-throw new Error("Unable to load posts");
+console.error(errorText);
 
-}
-
-const posts = await response.json();
-
-container.innerHTML="";
-
-if(posts.length === 0){
-
-container.innerHTML=`
-<p class="loading">
-No posts available yet.
-</p>
-`;
-
-return;
+throw new Error(
+"Post could not be created."
+);
 
 }
 
-posts.forEach(function(post){
 
-const card =
-document.createElement("div");
+showMessage(
+"Post published successfully! 🎉",
+"success"
+);
 
-card.className="card post-card";
 
-if(post.Image_url){
+titleInput.value="";
+contentInput.value="";
+mediaInput.value="";
+preview.innerHTML="";
 
-const image =
-document.createElement("img");
 
-image.className="post-image";
+setTimeout(function(){
 
-image.src=post.Image_url;
+window.location.href="index.html";
 
-image.alt=post.Title || "Post image";
+},1500);
 
-image.onerror=function(){
-image.style.display="none";
-};
-
-card.appendChild(image);
-
-}
-
-const title =
-document.createElement("h3");
-
-title.textContent =
-post.Title || "Untitled Post";
-
-card.appendChild(title);
-
-const content =
-document.createElement("p");
-
-content.textContent =
-post.Content || "";
-
-card.appendChild(content);
-
-container.appendChild(card);
-
-});
 
 }
 
 catch(error){
 
-console.error("Error loading posts:", error);
+console.error(error);
 
-container.innerHTML=`
-<p class="error">
-Unable to load posts at the moment.
-</p>
-`;
+showMessage(
+error.message ||
+"Something went wrong.",
+"error"
+);
+
+publishBtn.disabled=false;
+
+publishBtn.textContent=
+"Publish Post";
 
 }
 
-}
+});
 
-loadPosts();
+
+function showMessage(text,type){
+
+message.textContent=text;
+
+message.className=
+"message " + type;
+
+}
 
 </script>
 
