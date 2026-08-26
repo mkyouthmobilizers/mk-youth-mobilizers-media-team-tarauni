@@ -29,23 +29,26 @@ body{
   margin:20px auto;
 }
 
-.box{
+/* LOGIN */
+
+.login-box{
+  max-width:450px;
+  margin:70px auto;
   background:white;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 4px 20px rgba(0,0,0,.1);
-  margin-bottom:25px;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 5px 25px rgba(0,0,0,.12);
 }
 
-h1{
+.login-box h1{
+  text-align:center;
   color:#075b32;
-  text-align:center;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
-.subtitle{
+.login-subtitle{
   text-align:center;
-  color:#666;
+  color:#777;
   margin-bottom:25px;
 }
 
@@ -69,6 +72,80 @@ textarea{
   resize:vertical;
 }
 
+button{
+  border:0;
+  border-radius:8px;
+  padding:13px 18px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.login-btn{
+  width:100%;
+  margin-top:20px;
+  background:#075b32;
+  color:white;
+  font-size:17px;
+}
+
+.logout-btn{
+  background:#b00020;
+  color:white;
+  width:100%;
+  margin-top:15px;
+}
+
+.forgot{
+  display:block;
+  text-align:center;
+  margin-top:18px;
+  color:#075b32;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.message{
+  margin-top:15px;
+  text-align:center;
+  font-weight:bold;
+  line-height:1.5;
+}
+
+.success{
+  color:#087f23;
+}
+
+.error{
+  color:#b00020;
+}
+
+/* ADMIN */
+
+#adminPanel{
+  display:none;
+}
+
+.box{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 20px rgba(0,0,0,.1);
+  margin-bottom:25px;
+}
+
+h1{
+  color:#075b32;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#666;
+  margin-bottom:25px;
+}
+
 input[type="file"]{
   background:#f5f5f5;
 }
@@ -86,15 +163,6 @@ input[type="file"]{
   border-radius:10px;
 }
 
-button{
-  border:0;
-  border-radius:8px;
-  padding:13px 18px;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
 #publishBtn{
   width:100%;
   margin-top:20px;
@@ -106,22 +174,6 @@ button{
 button:disabled{
   background:#999 !important;
   cursor:not-allowed;
-}
-
-.message{
-  margin-top:18px;
-  text-align:center;
-  font-weight:bold;
-  line-height:1.5;
-  word-break:break-word;
-}
-
-.success{
-  color:#087f23;
-}
-
-.error{
-  color:#b00020;
 }
 
 .posts-title{
@@ -198,115 +250,218 @@ button:disabled{
   padding:20px;
 }
 
+/* MOBILE */
+
+@media(max-width:600px){
+
+  body{
+    padding:10px;
+  }
+
+  .box{
+    padding:18px;
+  }
+
+  .login-box{
+    margin:40px auto;
+    padding:22px;
+  }
+
+}
+
 </style>
 
 </head>
 
-
 <body>
 
 
-<div class="container">
-
-
-<!-- CREATE / EDIT -->
-
-<div class="box">
-
-<h1>
-MK Youth Mobilizers
-</h1>
-
-<p class="subtitle" id="formTitle">
-Create a new post
-</p>
-
-
-<label for="title">
-Post Title
-</label>
-
-<input
-  type="text"
-  id="title"
-  placeholder="Enter post title"
->
-
-
-<label for="content">
-Post Content
-</label>
-
-<textarea
-  id="content"
-  placeholder="Write your post here..."
-></textarea>
-
-
-<label for="media">
-Choose Photo or Video
-</label>
-
-<input
-  type="file"
-  id="media"
-  accept="image/*,video/*"
->
-
+<!-- =========================
+     LOGIN
+========================= -->
 
 <div
-  id="preview"
-  class="preview"
-></div>
-
-
-<button id="publishBtn">
-Publish Post
-</button>
-
-
-<button
-  id="cancelBtn"
-  class="cancel-btn"
+  id="loginBox"
+  class="login-box"
 >
-Cancel Edit
-</button>
 
+  <h1>
+    MK Youth Mobilizers
+  </h1>
+
+  <p class="login-subtitle">
+    Admin Login
+  </p>
+
+
+  <label for="loginEmail">
+    Email
+  </label>
+
+  <input
+    type="email"
+    id="loginEmail"
+    placeholder="Enter admin email"
+    autocomplete="email"
+  >
+
+
+  <label for="loginPassword">
+    Password
+  </label>
+
+  <input
+    type="password"
+    id="loginPassword"
+    placeholder="Enter password"
+    autocomplete="current-password"
+  >
+
+
+  <button
+    id="loginBtn"
+    class="login-btn"
+  >
+    Login
+  </button>
+
+
+  <span
+    id="forgotBtn"
+    class="forgot"
+  >
+    Forgot Password?
+  </span>
+
+
+  <div
+    id="loginMessage"
+    class="message"
+  ></div>
+
+</div>
+
+
+<!-- =========================
+     ADMIN PANEL
+========================= -->
 
 <div
-  id="message"
-  class="message"
-></div>
-
-</div>
-
-
-<!-- POSTS -->
-
-<div class="box">
-
-<h2 class="posts-title">
-Manage Posts
-</h2>
-
-<div id="posts">
-
-<div class="empty">
-Loading posts...
-</div>
-
-</div>
-
-</div>
-
-
-<a
-  class="back"
-  href="index.html"
+  id="adminPanel"
+  class="container"
 >
-← Back to Website
-</a>
 
+
+  <!-- CREATE / EDIT -->
+
+  <div class="box">
+
+    <h1>
+      MK Youth Mobilizers
+    </h1>
+
+    <p
+      class="subtitle"
+      id="formTitle"
+    >
+      Create a new post
+    </p>
+
+
+    <label for="title">
+      Post Title
+    </label>
+
+    <input
+      type="text"
+      id="title"
+      placeholder="Enter post title"
+    >
+
+
+    <label for="content">
+      Post Content
+    </label>
+
+    <textarea
+      id="content"
+      placeholder="Write your post here..."
+    ></textarea>
+
+
+    <label for="media">
+      Choose Photo or Video
+    </label>
+
+    <input
+      type="file"
+      id="media"
+      accept="image/*,video/*"
+    >
+
+
+    <div
+      id="preview"
+      class="preview"
+    ></div>
+
+
+    <button
+      id="publishBtn"
+    >
+      Publish Post
+    </button>
+
+
+    <button
+      id="cancelBtn"
+      class="cancel-btn"
+    >
+      Cancel Edit
+    </button>
+
+
+    <div
+      id="message"
+      class="message"
+    ></div>
+
+
+    <button
+      id="logoutBtn"
+      class="logout-btn"
+    >
+      Logout
+    </button>
+
+  </div>
+
+
+  <!-- POSTS -->
+
+  <div class="box">
+
+    <h2 class="posts-title">
+      Manage Posts
+    </h2>
+
+    <div id="posts">
+
+      <div class="empty">
+        Loading posts...
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <a
+    class="back"
+    href="index.html"
+  >
+    ← Back to Website
+  </a>
 
 </div>
 
@@ -317,7 +472,6 @@ Loading posts...
 
 
 <script>
-
 
 /* =========================
    CONFIG
@@ -337,17 +491,6 @@ const BUCKET =
    SUPABASE
 ========================= */
 
-if(!window.supabase){
-
-  document.body.innerHTML =
-  "<h2 style='text-align:center;margin-top:50px;color:red'>Supabase failed to load.</h2>";
-
-  throw new Error(
-    "Supabase library failed to load"
-  );
-}
-
-
 const client =
 window.supabase.createClient(
   SUPABASE_URL,
@@ -358,6 +501,30 @@ window.supabase.createClient(
 /* =========================
    ELEMENTS
 ========================= */
+
+const loginBox =
+document.getElementById("loginBox");
+
+const adminPanel =
+document.getElementById("adminPanel");
+
+const loginEmail =
+document.getElementById("loginEmail");
+
+const loginPassword =
+document.getElementById("loginPassword");
+
+const loginBtn =
+document.getElementById("loginBtn");
+
+const forgotBtn =
+document.getElementById("forgotBtn");
+
+const loginMessage =
+document.getElementById("loginMessage");
+
+const logoutBtn =
+document.getElementById("logoutBtn");
 
 const titleInput =
 document.getElementById("title");
@@ -391,11 +558,8 @@ document.getElementById("formTitle");
    EDIT STATE
 ========================= */
 
-let editingId =
-null;
-
-let oldMediaUrl =
-null;
+let editingId = null;
+let oldMediaUrl = null;
 
 
 /* =========================
@@ -417,34 +581,314 @@ function showMessage(
 
 
 /* =========================
-   PREVIEW
+   LOGIN MESSAGE
+========================= */
+
+function showLoginMessage(
+  text,
+  type
+){
+
+  loginMessage.textContent =
+  text;
+
+  loginMessage.className =
+  "message " + type;
+
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+loginBtn.addEventListener(
+"click",
+async function(){
+
+  const email =
+  loginEmail.value.trim();
+
+  const password =
+  loginPassword.value;
+
+
+  if(!email){
+
+    showLoginMessage(
+      "Please enter your email.",
+      "error"
+    );
+
+    return;
+
+  }
+
+
+  if(!password){
+
+    showLoginMessage(
+      "Please enter your password.",
+      "error"
+    );
+
+    return;
+
+  }
+
+
+  loginBtn.disabled =
+  true;
+
+  loginBtn.textContent =
+  "Logging in...";
+
+
+  try{
+
+    const { data, error } =
+    await client.auth.signInWithPassword({
+
+      email:email,
+
+      password:password
+
+    });
+
+
+    if(error){
+
+      throw error;
+
+    }
+
+
+    if(!data.user){
+
+      throw new Error(
+        "Login failed."
+      );
+
+    }
+
+
+    loginBox.style.display =
+    "none";
+
+    adminPanel.style.display =
+    "block";
+
+
+    loadPosts();
+
+  }
+
+
+  catch(error){
+
+    console.error(
+      error
+    );
+
+
+    showLoginMessage(
+      "❌ " + error.message,
+      "error"
+    );
+
+  }
+
+
+  loginBtn.disabled =
+  false;
+
+  loginBtn.textContent =
+  "Login";
+
+});
+
+
+/* =========================
+   ENTER KEY LOGIN
+========================= */
+
+loginPassword.addEventListener(
+"keydown",
+function(event){
+
+  if(event.key === "Enter"){
+
+    loginBtn.click();
+
+  }
+
+});
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+forgotBtn.addEventListener(
+"click",
+async function(){
+
+  const email =
+  loginEmail.value.trim();
+
+
+  if(!email){
+
+    showLoginMessage(
+      "Enter your email first.",
+      "error"
+    );
+
+    return;
+
+  }
+
+
+  forgotBtn.textContent =
+  "Sending...";
+
+
+  try{
+
+    const { error } =
+    await client.auth.resetPasswordForEmail(
+      email,
+      {
+        redirectTo:
+        window.location.origin +
+        window.location.pathname
+      }
+    );
+
+
+    if(error){
+
+      throw error;
+
+    }
+
+
+    showLoginMessage(
+      "✅ Password reset email sent. Check your Gmail.",
+      "success"
+    );
+
+  }
+
+
+  catch(error){
+
+    showLoginMessage(
+      "❌ " + error.message,
+      "error"
+    );
+
+  }
+
+
+  forgotBtn.textContent =
+  "Forgot Password?";
+
+});
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+logoutBtn.addEventListener(
+"click",
+async function(){
+
+  await client.auth.signOut();
+
+  adminPanel.style.display =
+  "none";
+
+  loginBox.style.display =
+  "block";
+
+  loginPassword.value =
+  "";
+
+  showLoginMessage(
+    "You have logged out.",
+    "success"
+  );
+
+});
+
+
+/* =========================
+   CHECK SESSION
+========================= */
+
+async function checkSession(){
+
+  const { data } =
+  await client.auth.getSession();
+
+
+  if(data.session){
+
+    loginBox.style.display =
+    "none";
+
+    adminPanel.style.display =
+    "block";
+
+    loadPosts();
+
+  }
+
+}
+
+
+checkSession();
+
+
+/* =========================
+   MEDIA PREVIEW
 ========================= */
 
 mediaInput.addEventListener(
 "change",
 function(){
 
-  preview.innerHTML = "";
+  preview.innerHTML =
+  "";
 
   const file =
   mediaInput.files[0];
 
+
   if(!file){
+
     return;
+
   }
 
 
-  if(file.size >
-     50 * 1024 * 1024){
+  if(
+    file.size >
+    50 * 1024 * 1024
+  ){
 
     showMessage(
       "File is larger than 50 MB.",
       "error"
     );
 
-    mediaInput.value = "";
+    mediaInput.value =
+    "";
 
     return;
+
   }
 
 
@@ -452,10 +896,16 @@ function(){
   URL.createObjectURL(file);
 
 
-  if(file.type.startsWith("image/")){
+  if(
+    file.type.startsWith(
+      "image/"
+    )
+  ){
 
     const img =
-    document.createElement("img");
+    document.createElement(
+      "img"
+    );
 
     img.src =
     url;
@@ -468,16 +918,23 @@ function(){
 
 
   else if(
-    file.type.startsWith("video/")
+    file.type.startsWith(
+      "video/"
+    )
   ){
 
     const video =
-    document.createElement("video");
+    document.createElement(
+      "video"
+    );
 
     video.src =
     url;
 
     video.controls =
+    true;
+
+    video.playsInline =
     true;
 
     preview.appendChild(
@@ -493,7 +950,9 @@ function(){
    UPLOAD MEDIA
 ========================= */
 
-async function uploadMedia(file){
+async function uploadMedia(
+  file
+){
 
   const safeName =
   file.name.replace(
@@ -508,7 +967,7 @@ async function uploadMedia(file){
   safeName;
 
 
-  const result =
+  const { error } =
   await client.storage
   .from(BUCKET)
   .upload(
@@ -522,11 +981,11 @@ async function uploadMedia(file){
   );
 
 
-  if(result.error){
+  if(error){
 
     throw new Error(
       "Storage upload failed: " +
-      result.error.message
+      error.message
     );
 
   }
@@ -569,6 +1028,7 @@ async function(){
     );
 
     return;
+
   }
 
 
@@ -580,6 +1040,7 @@ async function(){
     );
 
     return;
+
   }
 
 
@@ -592,8 +1053,6 @@ async function(){
     let mediaUrl =
     oldMediaUrl;
 
-
-    /* NEW MEDIA */
 
     if(file){
 
@@ -611,19 +1070,11 @@ async function(){
     }
 
 
-    /* =========================
-       UPDATE EXISTING
-    ========================= */
+    /* UPDATE */
 
     if(editingId){
 
-      showMessage(
-        "Updating post...",
-        "success"
-      );
-
-
-      const result =
+      const { error } =
       await client
       .from("posts")
       .update({
@@ -641,12 +1092,9 @@ async function(){
       );
 
 
-      if(result.error){
+      if(error){
 
-        throw new Error(
-          "Update failed: " +
-          result.error.message
-        );
+        throw error;
 
       }
 
@@ -659,19 +1107,11 @@ async function(){
     }
 
 
-    /* =========================
-       NEW POST
-    ========================= */
+    /* NEW POST */
 
     else{
 
-      showMessage(
-        "Saving post...",
-        "success"
-      );
-
-
-      const result =
+      const { error } =
       await client
       .from("posts")
       .insert([{
@@ -685,12 +1125,9 @@ async function(){
       }]);
 
 
-      if(result.error){
+      if(error){
 
-        throw new Error(
-          "Database error: " +
-          result.error.message
-        );
+        throw error;
 
       }
 
@@ -741,7 +1178,7 @@ async function loadPosts(){
   '<div class="empty">Loading posts...</div>';
 
 
-  const result =
+  const { data, error } =
   await client
   .from("posts")
   .select("*")
@@ -753,25 +1190,32 @@ async function loadPosts(){
   );
 
 
-  if(result.error){
+  if(error){
 
     postsContainer.innerHTML =
-    `<div class="empty">
-      ❌ ${escapeHtml(result.error.message)}
-    </div>`;
+    `
+    <div class="empty">
+      ❌ ${error.message}
+    </div>
+    `;
 
     return;
+
   }
 
 
   const posts =
-  result.data || [];
+  data || [];
 
 
   if(posts.length === 0){
 
     postsContainer.innerHTML =
-    '<div class="empty">No posts yet.</div>';
+    `
+    <div class="empty">
+      No posts yet.
+    </div>
+    `;
 
     return;
 
@@ -805,12 +1249,14 @@ async function loadPosts(){
       url.toLowerCase();
 
 
-      if(
-        lower.includes(".mp4") ||
-        lower.includes(".webm") ||
-        lower.includes(".mov") ||
-        lower.includes(".m4v")
-      ){
+      const isVideo =
+      lower.includes(".mp4") ||
+      lower.includes(".webm") ||
+      lower.includes(".mov") ||
+      lower.includes(".m4v");
+
+
+      if(isVideo){
 
         const video =
         document.createElement(
@@ -821,6 +1267,9 @@ async function loadPosts(){
         url;
 
         video.controls =
+        true;
+
+        video.playsInline =
         true;
 
         card.appendChild(
@@ -851,6 +1300,8 @@ async function loadPosts(){
     }
 
 
+    /* TITLE */
+
     const title =
     document.createElement(
       "h3"
@@ -860,6 +1311,8 @@ async function loadPosts(){
     post.Title ||
     "Untitled Post";
 
+
+    /* CONTENT */
 
     const content =
     document.createElement(
@@ -891,6 +1344,8 @@ async function loadPosts(){
     "actions";
 
 
+    /* EDIT */
+
     const editBtn =
     document.createElement(
       "button"
@@ -902,7 +1357,6 @@ async function loadPosts(){
     editBtn.textContent =
     "✏️ Edit";
 
-
     editBtn.onclick =
     function(){
 
@@ -912,6 +1366,8 @@ async function loadPosts(){
 
     };
 
+
+    /* DELETE */
 
     const deleteBtn =
     document.createElement(
@@ -923,7 +1379,6 @@ async function loadPosts(){
 
     deleteBtn.textContent =
     "🗑️ Delete";
-
 
     deleteBtn.onclick =
     function(){
@@ -1049,7 +1504,7 @@ function resetForm(){
 
 
 /* =========================
-   DELETE POST
+   DELETE
 ========================= */
 
 async function deletePost(post){
@@ -1061,13 +1516,15 @@ async function deletePost(post){
 
 
   if(!confirmed){
+
     return;
+
   }
 
 
   try{
 
-    const result =
+    const { error } =
     await client
     .from("posts")
     .delete()
@@ -1077,11 +1534,9 @@ async function deletePost(post){
     );
 
 
-    if(result.error){
+    if(error){
 
-      throw new Error(
-        result.error.message
-      );
+      throw error;
 
     }
 
@@ -1108,32 +1563,6 @@ async function deletePost(post){
   }
 
 }
-
-
-/* =========================
-   ESCAPE HTML
-========================= */
-
-function escapeHtml(text){
-
-  const div =
-  document.createElement(
-    "div"
-  );
-
-  div.textContent =
-  text;
-
-  return div.innerHTML;
-
-}
-
-
-/* =========================
-   START
-========================= */
-
-loadPosts();
 
 </script>
 
