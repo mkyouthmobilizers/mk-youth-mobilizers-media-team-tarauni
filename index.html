@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MK Youth Mobilizers - Admin</title>
+<title>MK Youth Mobilizers Media Team Tarauni</title>
 
 <style>
 *{
@@ -16,174 +16,232 @@
 body{
   font-family:Arial,sans-serif;
   background:#f4f7f5;
-  padding:20px;
   color:#222;
 }
 
-.container{
-  max-width:650px;
-  margin:30px auto;
-  background:white;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 4px 20px rgba(0,0,0,.1);
+header{
+  background:#075b32;
+  color:white;
+  padding:30px 20px;
+  text-align:center;
 }
 
-h1{
-  color:#075b32;
-  text-align:center;
+header h1{
+  font-size:28px;
   margin-bottom:10px;
 }
 
-.subtitle{
-  text-align:center;
+header p{
+  font-size:15px;
+  opacity:.95;
+}
+
+.container{
+  max-width:900px;
+  margin:25px auto;
+  padding:0 15px;
+}
+
+.about{
+  background:white;
+  padding:22px;
+  border-radius:15px;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
   margin-bottom:25px;
-  color:#666;
 }
 
-label{
-  display:block;
-  font-weight:bold;
-  margin:15px 0 7px;
+.about h2{
+  color:#075b32;
+  margin-bottom:10px;
 }
 
-input,
-textarea{
+.about p{
+  line-height:1.7;
+  color:#555;
+}
+
+.posts-title{
+  color:#075b32;
+  margin-bottom:15px;
+}
+
+.post{
+  background:white;
+  margin-bottom:20px;
+  padding:18px;
+  border-radius:15px;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.post h2{
+  color:#075b32;
+  margin-bottom:10px;
+}
+
+.post p{
+  line-height:1.7;
+  white-space:pre-wrap;
+  margin-bottom:15px;
+}
+
+.post img,
+.post video{
   width:100%;
-  padding:14px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:16px;
-}
-
-textarea{
-  min-height:150px;
-  resize:vertical;
-}
-
-input[type="file"]{
-  padding:12px;
-  background:#f5f5f5;
-}
-
-.preview{
-  margin-top:15px;
-  text-align:center;
-}
-
-.preview img,
-.preview video{
-  width:100%;
-  max-height:350px;
+  max-height:500px;
   object-fit:contain;
-  border-radius:10px;
+  border-radius:12px;
+  background:#eee;
 }
 
-button{
-  width:100%;
-  margin-top:20px;
-  padding:15px;
-  border:0;
-  border-radius:8px;
-  background:#075b32;
-  color:white;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
+.date{
+  color:#777;
+  font-size:13px;
+  margin-bottom:10px;
 }
 
-button:disabled{
-  background:#999;
-  cursor:not-allowed;
-}
-
-.message{
-  margin-top:18px;
+.loading,
+.error,
+.empty{
   text-align:center;
-  font-weight:bold;
-  line-height:1.5;
-  word-break:break-word;
-}
-
-.success{
-  color:#087f23;
+  padding:25px;
+  color:#666;
 }
 
 .error{
   color:#b00020;
 }
 
-.back{
-  display:block;
+.social{
+  background:#075b32;
+  color:white;
+  padding:25px 15px;
   text-align:center;
-  margin-top:20px;
+  margin-top:30px;
+}
+
+.social h2{
+  margin-bottom:15px;
+}
+
+.social a{
+  display:inline-block;
+  margin:5px;
+  padding:10px 15px;
+  background:white;
   color:#075b32;
+  border-radius:8px;
   text-decoration:none;
   font-weight:bold;
+}
+
+footer{
+  background:#043d22;
+  color:white;
+  text-align:center;
+  padding:18px;
+  font-size:14px;
+}
+
+@media(max-width:600px){
+
+  header h1{
+    font-size:23px;
+  }
+
+  .container{
+    padding:0 10px;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-<h1>MK Youth Mobilizers</h1>
+<h1>
+MK Youth Mobilizers Media Team Tarauni
+</h1>
 
-<p class="subtitle">
-Create a new post
+<p>
+Connecting • Inspiring • Empowering Young People
 </p>
 
-<label for="title">
-Post Title
-</label>
+</header>
 
-<input
-  type="text"
-  id="title"
-  placeholder="Enter post title"
->
 
-<label for="content">
-Post Content
-</label>
+<div class="container">
 
-<textarea
-  id="content"
-  placeholder="Write your post here..."
-></textarea>
+<section class="about">
 
-<label for="media">
-Choose Photo or Video
-</label>
+<h2>
+About MK Youth Mobilizers
+</h2>
 
-<input
-  type="file"
-  id="media"
-  accept="image/*,video/*"
->
+<p>
+MK Youth Mobilizers is a youth-focused platform dedicated to connecting, inspiring and empowering young people. We promote unity, leadership, teamwork and positive development.
+</p>
 
-<div id="preview" class="preview"></div>
+</section>
 
-<button id="publishBtn">
-Publish Post
-</button>
 
-<div id="message" class="message"></div>
+<h2 class="posts-title">
+Latest Posts
+</h2>
 
-<a
-  class="back"
-  href="index.html"
->
-← Back to Website
-</a>
+<div id="posts">
+
+<div class="loading">
+Loading posts...
+</div>
 
 </div>
+
+</div>
+
+
+<section class="social">
+
+<h2>
+Connect With Us
+</h2>
+
+<a
+href="https://www.tiktok.com/@yaronmk1"
+target="_blank"
+>
+TikTok
+</a>
+
+<a
+href="https://www.facebook.com/"
+target="_blank"
+>
+Facebook
+</a>
+
+<a
+href="https://www.instagram.com/"
+target="_blank"
+>
+Instagram
+</a>
+
+</section>
+
+
+<footer>
+
+© 2026 MK Youth Mobilizers Media Team Tarauni
+
+</footer>
+
 
 <script>
 
 /* =========================
-   SUPABASE CONFIG
+   SUPABASE
 ========================= */
 
 const SUPABASE_URL =
@@ -192,255 +250,24 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzemZpY3Jjbmd4aXBjbGxlemdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxODk2NDAsImV4cCI6MjEwMjc2NTY0MH0.znhpjuYoWAqQmaOmrey7m8X2KusGRg-eJUZrwGTiMg";
 
-const BUCKET =
-"post-media";
+
+const postsContainer =
+document.getElementById("posts");
 
 
 /* =========================
-   ELEMENTS
+   LOAD POSTS
 ========================= */
 
-const titleInput =
-document.getElementById("title");
-
-const contentInput =
-document.getElementById("content");
-
-const mediaInput =
-document.getElementById("media");
-
-const preview =
-document.getElementById("preview");
-
-const publishBtn =
-document.getElementById("publishBtn");
-
-const message =
-document.getElementById("message");
-
-
-/* =========================
-   MEDIA PREVIEW
-========================= */
-
-mediaInput.addEventListener(
-"change",
-function(){
-
-  preview.innerHTML = "";
-
-  const file =
-  mediaInput.files[0];
-
-  if(!file){
-    return;
-  }
-
-  const url =
-  URL.createObjectURL(file);
-
-
-  if(file.type.startsWith("image/")){
-
-    const img =
-    document.createElement("img");
-
-    img.src = url;
-
-    preview.appendChild(img);
-
-  }
-
-
-  else if(file.type.startsWith("video/")){
-
-    const video =
-    document.createElement("video");
-
-    video.src = url;
-
-    video.controls = true;
-
-    preview.appendChild(video);
-
-  }
-
-});
-
-
-/* =========================
-   PUBLISH
-========================= */
-
-publishBtn.addEventListener(
-"click",
-async function(){
-
-  const title =
-  titleInput.value.trim();
-
-  const content =
-  contentInput.value.trim();
-
-  const file =
-  mediaInput.files[0];
-
-
-  /* TITLE CHECK */
-
-  if(!title){
-
-    showMessage(
-      "Please enter a post title.",
-      "error"
-    );
-
-    return;
-  }
-
-
-  /* CONTENT CHECK */
-
-  if(!content){
-
-    showMessage(
-      "Please enter post content.",
-      "error"
-    );
-
-    return;
-  }
-
-
-  /* FILE SIZE CHECK */
-
-  if(file){
-
-    const maxSize =
-    50 * 1024 * 1024;
-
-    if(file.size > maxSize){
-
-      showMessage(
-        "File is larger than 50 MB. Please choose a smaller file.",
-        "error"
-      );
-
-      return;
-    }
-
-  }
-
-
-  /* LOADING */
-
-  publishBtn.disabled = true;
-
-  publishBtn.textContent =
-  "Publishing...";
-
+async function loadPosts(){
 
   try{
 
-    let mediaUrl = null;
-
-
-    /* =========================
-       UPLOAD MEDIA
-    ========================= */
-
-    if(file){
-
-      const safeName =
-      file.name
-      .replace(
-        /[^a-zA-Z0-9.-]/g,
-        "-"
-      );
-
-
-      const fileName =
-      Date.now() +
-      "-" +
-      safeName;
-
-
-      const uploadUrl =
-      `${SUPABASE_URL}/storage/v1/object/${BUCKET}/${fileName}`;
-
-
-      console.log(
-        "Uploading to:",
-        uploadUrl
-      );
-
-
-      const uploadResponse =
-      await fetch(
-        uploadUrl,
-        {
-          method:"POST",
-
-          headers:{
-            "apikey":
-              SUPABASE_KEY,
-
-            "Authorization":
-              "Bearer " +
-              SUPABASE_KEY,
-
-            "Content-Type":
-              file.type,
-
-            "x-upsert":
-              "false"
-          },
-
-          body:file
-        }
-      );
-
-
-      const errorText =
-      await uploadResponse.text();
-
-
-      console.log(
-        "Storage response:",
-        uploadResponse.status,
-        errorText
-      );
-
-
-      if(!uploadResponse.ok){
-
-        throw new Error(
-          "Storage error " +
-          uploadResponse.status +
-          ": " +
-          errorText
-        );
-
-      }
-
-
-      /* PUBLIC URL */
-
-      mediaUrl =
-      `${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${fileName}`;
-
-    }
-
-
-    /* =========================
-       INSERT POST
-    ========================= */
-
-    const postResponse =
+    const response =
     await fetch(
-      `${SUPABASE_URL}/rest/v1/posts`,
+      `${SUPABASE_URL}/rest/v1/posts?select=*&order=id.desc`,
       {
-        method:"POST",
+        method:"GET",
 
         headers:{
           "apikey":
@@ -448,125 +275,172 @@ async function(){
 
           "Authorization":
             "Bearer " +
-            SUPABASE_KEY,
-
-          "Content-Type":
-            "application/json",
-
-          "Prefer":
-            "return=representation"
-        },
-
-        body:JSON.stringify({
-
-          Title:title,
-
-          Content:content,
-
-          Image_url:mediaUrl
-
-        })
+            SUPABASE_KEY
+        }
       }
     );
 
 
-    const postError =
-    await postResponse.text();
+    if(!response.ok){
 
+      const error =
+      await response.text();
 
-    console.log(
-      "Posts response:",
-      postResponse.status,
-      postError
-    );
-
-
-    if(!postResponse.ok){
+      console.error(error);
 
       throw new Error(
-        "Database error " +
-        postResponse.status +
-        ": " +
-        postError
+        "Unable to load posts."
       );
 
     }
 
 
-    /* =========================
-       SUCCESS
-    ========================= */
-
-    showMessage(
-      "Post published successfully! 🎉",
-      "success"
-    );
+    const posts =
+    await response.json();
 
 
-    titleInput.value = "";
-
-    contentInput.value = "";
-
-    mediaInput.value = "";
-
-    preview.innerHTML = "";
+    postsContainer.innerHTML = "";
 
 
-    setTimeout(
-      function(){
+    if(!posts || posts.length === 0){
 
-        window.location.href =
-        "index.html";
+      postsContainer.innerHTML = `
+        <div class="empty">
+          No posts available yet.
+        </div>
+      `;
 
-      },
-      1500
-    );
+      return;
+
+    }
+
+
+    posts.forEach(function(post){
+
+      const article =
+      document.createElement("article");
+
+      article.className =
+      "post";
+
+
+      const title =
+      document.createElement("h2");
+
+      title.textContent =
+      post.Title || "Untitled Post";
+
+
+      const content =
+      document.createElement("p");
+
+      content.textContent =
+      post.Content || "";
+
+
+      article.appendChild(title);
+
+
+      if(post.created_at){
+
+        const date =
+        document.createElement("div");
+
+        date.className =
+        "date";
+
+        date.textContent =
+        new Date(
+          post.created_at
+        ).toLocaleString();
+
+        article.appendChild(date);
+
+      }
+
+
+      article.appendChild(content);
+
+
+      /* MEDIA */
+
+      if(post.Image_url){
+
+        const mediaUrl =
+        post.Image_url;
+
+
+        if(
+          /\.(mp4|webm|ogg|mov|m4v)(\?.*)?$/i
+          .test(mediaUrl)
+        ){
+
+          const video =
+          document.createElement("video");
+
+          video.src =
+          mediaUrl;
+
+          video.controls =
+          true;
+
+          video.preload =
+          "metadata";
+
+          article.appendChild(video);
+
+        }
+
+        else{
+
+          const img =
+          document.createElement("img");
+
+          img.src =
+          mediaUrl;
+
+          img.alt =
+          post.Title || "Post image";
+
+          img.loading =
+          "lazy";
+
+          article.appendChild(img);
+
+        }
+
+      }
+
+
+      postsContainer.appendChild(
+        article
+      );
+
+    });
 
   }
 
 
   catch(error){
 
-    console.error(
-      "FULL ERROR:",
-      error
-    );
+    console.error(error);
 
-
-    showMessage(
-      error.message ||
-      "Something went wrong.",
-      "error"
-    );
-
-
-    publishBtn.disabled =
-    false;
-
-    publishBtn.textContent =
-    "Publish Post";
+    postsContainer.innerHTML = `
+      <div class="error">
+        Unable to load posts. Please try again later.
+      </div>
+    `;
 
   }
 
-});
+}
 
 
 /* =========================
-   MESSAGE
+   START
 ========================= */
 
-function showMessage(
-text,
-type
-){
-
-  message.textContent =
-  text;
-
-  message.className =
-  "message " + type;
-
-}
+loadPosts();
 
 </script>
 
