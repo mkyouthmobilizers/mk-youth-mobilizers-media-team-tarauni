@@ -1,488 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MK Youth Mobilizers - Admin</title>
+<title>MK Youth Mobilizers Admin</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
 body{
   font-family:Arial,sans-serif;
   background:#f4f7f5;
   padding:20px;
-  color:#222;
 }
 
-.container{
-  max-width:650px;
-  margin:30px auto;
-  background:#fff;
-  padding:25px;
+.box{
+  max-width:600px;
+  margin:40px auto;
+  background:white;
+  padding:30px;
   border-radius:15px;
-  box-shadow:0 4px 20px rgba(0,0,0,.1);
+  text-align:center;
 }
 
 h1{
   color:#075b32;
-  text-align:center;
-  margin-bottom:10px;
 }
 
-.subtitle{
-  text-align:center;
-  margin-bottom:25px;
-  color:#666;
-}
-
-label{
-  display:block;
-  font-weight:bold;
-  margin:15px 0 7px;
-}
-
-input,
-textarea{
+input,textarea{
   width:100%;
   padding:14px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:16px;
-}
-
-textarea{
-  min-height:150px;
-  resize:vertical;
-}
-
-input[type="file"]{
-  padding:12px;
-  background:#f5f5f5;
-}
-
-.preview{
-  margin-top:15px;
-  text-align:center;
-}
-
-.preview img,
-.preview video{
-  width:100%;
-  max-height:350px;
-  object-fit:contain;
-  border-radius:10px;
+  margin-top:10px;
+  margin-bottom:15px;
+  box-sizing:border-box;
 }
 
 button{
   width:100%;
-  margin-top:20px;
   padding:15px;
-  border:0;
-  border-radius:8px;
   background:#075b32;
   color:white;
+  border:0;
+  border-radius:8px;
   font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-button:disabled{
-  background:#999;
-  cursor:not-allowed;
-}
-
-.message{
-  margin-top:18px;
-  text-align:center;
-  font-weight:bold;
-  line-height:1.5;
-  word-break:break-word;
-}
-
-.success{
-  color:#087f23;
-}
-
-.error{
-  color:#b00020;
-}
-
-.back{
-  display:block;
-  text-align:center;
-  margin-top:20px;
-  color:#075b32;
-  text-decoration:none;
-  font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="box">
 
 <h1>MK Youth Mobilizers</h1>
 
-<p class="subtitle">
-Create a new post
-</p>
+<p>Admin Post Page</p>
 
-<label for="title">
-Post Title
-</label>
+<input type="text" placeholder="Post Title">
 
-<input
-  type="text"
-  id="title"
-  placeholder="Enter post title"
->
+<textarea placeholder="Write your post here..."></textarea>
 
-<label for="content">
-Post Content
-</label>
+<input type="file">
 
-<textarea
-  id="content"
-  placeholder="Write your post here..."
-></textarea>
+<button>Publish Post</button>
 
-<label for="media">
-Choose Photo or Video
-</label>
-
-<input
-  type="file"
-  id="media"
-  accept="image/*,video/*"
->
-
-<div id="preview" class="preview"></div>
-
-<button id="publishBtn">
-Publish Post
-</button>
-
-<div id="message" class="message"></div>
-
-<a
-  class="back"
-  href="index.html"
->
-← Back to Website
-</a>
+<p>Admin page is working ✅</p>
 
 </div>
-
-
-<!-- SUPABASE -->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-
-const SUPABASE_URL =
-"https://kszficrcngxipcllezgl.supabase.co";
-
-const SUPABASE_KEY =
-"sb_publishable_hsMkfMvXMbAXXt8Z7LvAvg_52miDaJe";
-
-const BUCKET =
-"post-media";
-
-const client =
-window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
-
-/* ELEMENTS */
-
-const titleInput =
-document.getElementById("title");
-
-const contentInput =
-document.getElementById("content");
-
-const mediaInput =
-document.getElementById("media");
-
-const preview =
-document.getElementById("preview");
-
-const publishBtn =
-document.getElementById("publishBtn");
-
-const message =
-document.getElementById("message");
-
-
-/* MESSAGE */
-
-function showMessage(text,type){
-
-  message.textContent = text;
-
-  message.className =
-  "message " + type;
-
-}
-
-
-/* PREVIEW */
-
-mediaInput.addEventListener(
-"change",
-function(){
-
-  preview.innerHTML = "";
-
-  const file =
-  mediaInput.files[0];
-
-  if(!file){
-    return;
-  }
-
-  if(file.size > 50 * 1024 * 1024){
-
-    showMessage(
-      "File is larger than 50 MB.",
-      "error"
-    );
-
-    mediaInput.value = "";
-
-    return;
-  }
-
-  const url =
-  URL.createObjectURL(file);
-
-  if(file.type.startsWith("image/")){
-
-    const img =
-    document.createElement("img");
-
-    img.src = url;
-
-    preview.appendChild(img);
-
-  }
-
-  else if(file.type.startsWith("video/")){
-
-    const video =
-    document.createElement("video");
-
-    video.src = url;
-
-    video.controls = true;
-
-    preview.appendChild(video);
-
-  }
-
-});
-
-
-/* PUBLISH */
-
-publishBtn.addEventListener(
-"click",
-async function(){
-
-  const title =
-  titleInput.value.trim();
-
-  const content =
-  contentInput.value.trim();
-
-  const file =
-  mediaInput.files[0];
-
-
-  if(!title){
-
-    showMessage(
-      "Please enter a post title.",
-      "error"
-    );
-
-    return;
-  }
-
-
-  if(!content){
-
-    showMessage(
-      "Please enter post content.",
-      "error"
-    );
-
-    return;
-  }
-
-
-  if(file &&
-     file.size > 50 * 1024 * 1024){
-
-    showMessage(
-      "File is larger than 50 MB.",
-      "error"
-    );
-
-    return;
-  }
-
-
-  publishBtn.disabled = true;
-
-  publishBtn.textContent =
-  "Publishing...";
-
-
-  try{
-
-    let mediaUrl = null;
-
-
-    /* UPLOAD MEDIA */
-
-    if(file){
-
-      const safeName =
-      file.name.replace(
-        /[^a-zA-Z0-9.-]/g,
-        "-"
-      );
-
-      const fileName =
-      Date.now() + "-" + safeName;
-
-
-      const result =
-      await client.storage
-      .from(BUCKET)
-      .upload(
-        fileName,
-        file,
-        {
-          cacheControl:"3600",
-          upsert:false,
-          contentType:file.type
-        }
-      );
-
-
-      if(result.error){
-
-        throw new Error(
-          "Storage upload failed: " +
-          result.error.message
-        );
-
-      }
-
-
-      const publicResult =
-      client.storage
-      .from(BUCKET)
-      .getPublicUrl(fileName);
-
-
-      mediaUrl =
-      publicResult.data.publicUrl;
-
-    }
-
-
-    /* SAVE POST */
-
-    const result =
-    await client
-    .from("posts")
-    .insert([
-      {
-        Title:title,
-        Content:content,
-        Image_url:mediaUrl
-      }
-    ])
-    .select();
-
-
-    if(result.error){
-
-      throw new Error(
-        "Database error: " +
-        result.error.message
-      );
-
-    }
-
-
-    /* SUCCESS */
-
-    showMessage(
-      "Post published successfully! 🎉",
-      "success"
-    );
-
-
-    titleInput.value = "";
-
-    contentInput.value = "";
-
-    mediaInput.value = "";
-
-    preview.innerHTML = "";
-
-
-    setTimeout(
-      function(){
-
-        window.location.href =
-        "index.html";
-
-      },
-      1500
-    );
-
-
-  }
-  catch(error){
-
-    console.error(
-      error
-    );
-
-
-    showMessage(
-      error.message ||
-      "Something went wrong.",
-      "error"
-    );
-
-
-    publishBtn.disabled =
-    false;
-
-    publishBtn.textContent =
-    "Publish Post";
-
-  }
-
-});
-
-</script>
 
 </body>
 </html>
