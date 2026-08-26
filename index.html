@@ -5,9 +5,85 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+      content="width=device-width, initial-scale=1.0">
 
-<title>MK Youth Mobilizers</title>
+<!-- =========================
+     SEO
+========================= -->
+
+<title>MK Youth Mobilizers | Media Team Tarauni</title>
+
+<meta name="description"
+      content="MK Youth Mobilizers Media Team Tarauni is a youth-focused platform dedicated to connecting, inspiring and empowering young people through unity, leadership, teamwork and positive development.">
+
+<meta name="keywords"
+      content="MK Youth Mobilizers, MK Youth Mobilizers Tarauni, Media Team Tarauni, Youth Mobilizers, Tarauni Youth, youth organization, youth development">
+
+<meta name="author"
+      content="MK Youth Mobilizers Media Team Tarauni">
+
+<meta name="robots"
+      content="index, follow">
+
+<meta name="googlebot"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://mkyouthmobilizers.github.io/mk-youth-mobilizers-media-team-tarauni/">
+
+<!-- =========================
+     OPEN GRAPH
+========================= -->
+
+<meta property="og:type"
+      content="website">
+
+<meta property="og:title"
+      content="MK Youth Mobilizers | Media Team Tarauni">
+
+<meta property="og:description"
+      content="Connecting, inspiring and empowering young people through unity, leadership, teamwork and positive development.">
+
+<meta property="og:image"
+      content="https://mkyouthmobilizers.github.io/mk-youth-mobilizers-media-team-tarauni/IMG_3240.jpeg">
+
+<meta property="og:url"
+      content="https://mkyouthmobilizers.github.io/mk-youth-mobilizers-media-team-tarauni/">
+
+<meta property="og:site_name"
+      content="MK Youth Mobilizers">
+
+<!-- =========================
+     TWITTER / X
+========================= -->
+
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="MK Youth Mobilizers | Media Team Tarauni">
+
+<meta name="twitter:description"
+      content="MK Youth Mobilizers Media Team Tarauni. Connecting, inspiring and empowering young people.">
+
+<meta name="twitter:image"
+      content="https://mkyouthmobilizers.github.io/mk-youth-mobilizers-media-team-tarauni/IMG_3240.jpeg">
+
+<!-- =========================
+     THEME
+========================= -->
+
+<meta name="theme-color"
+      content="#075b32">
+
+<!-- =========================
+     FAVICON
+========================= -->
+
+<link rel="icon"
+      type="image/jpeg"
+      href="IMG_3240.jpeg">
+
 
 <style>
 
@@ -15,6 +91,10 @@ content="width=device-width, initial-scale=1.0">
   box-sizing:border-box;
   margin:0;
   padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -25,10 +105,14 @@ body{
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
-  background:linear-gradient(
+
+  background:
+  linear-gradient(
     135deg,
     #075b32,
     #0b7a43
@@ -36,205 +120,453 @@ header{
 
   color:white;
   text-align:center;
-  padding:30px 15px;
+  padding:35px 15px;
+
 }
 
 .logo{
-  width:110px;
-  height:110px;
+
+  width:115px;
+  height:115px;
+
   object-fit:cover;
+
   border-radius:50%;
+
   border:4px solid white;
+
   background:white;
-  margin-bottom:12px;
+
+  margin-bottom:14px;
+
+  box-shadow:
+  0 5px 20px rgba(0,0,0,.20);
+
 }
 
 header h1{
-  font-size:29px;
-  margin-bottom:5px;
+
+  font-size:30px;
+
+  margin-bottom:6px;
+
 }
 
 header p{
-  font-size:15px;
+
+  font-size:16px;
+
+  opacity:.95;
+
 }
 
 
-/* NAV */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
+
   background:white;
+
   padding:14px;
+
   text-align:center;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+
+  box-shadow:
+  0 2px 10px rgba(0,0,0,.08);
+
 }
 
 nav a{
+
   color:#075b32;
+
   text-decoration:none;
+
   font-weight:bold;
+
+  margin:0 10px;
+
+}
+
+nav a:hover{
+
+  text-decoration:underline;
+
 }
 
 
-/* INTRO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
+
   max-width:900px;
+
   margin:auto;
-  padding:35px 20px;
+
+  padding:45px 20px;
+
   text-align:center;
+
 }
 
 .hero h2{
+
   color:#075b32;
-  font-size:27px;
-  margin-bottom:12px;
+
+  font-size:29px;
+
+  margin-bottom:14px;
+
 }
 
 .hero p{
+
   color:#555;
+
+  font-size:17px;
+
+  max-width:750px;
+
+  margin:auto;
+
 }
 
 
-/* POSTS */
+/* =========================
+   POSTS SECTION
+========================= */
 
 .posts-section{
-  max-width:1000px;
+
+  max-width:1100px;
+
   margin:auto;
-  padding:10px 15px 50px;
+
+  padding:
+  10px 15px 55px;
+
 }
 
 .posts-section h2{
+
   text-align:center;
+
   color:#075b32;
-  font-size:27px;
-  margin-bottom:25px;
+
+  font-size:28px;
+
+  margin-bottom:28px;
+
 }
 
 
-/* POSTS GRID */
+/* =========================
+   POSTS GRID
+========================= */
 
 #posts{
-  display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(280px,1fr));
 
-  gap:20px;
+  display:grid;
+
+  grid-template-columns:
+  repeat(
+    auto-fit,
+    minmax(280px,1fr)
+  );
+
+  gap:22px;
+
 }
 
 
-/* POST CARD */
+/* =========================
+   POST CARD
+========================= */
 
 .post-card{
+
   background:white;
+
   border-radius:15px;
+
   overflow:hidden;
+
   box-shadow:
-    0 4px 18px rgba(0,0,0,.10);
+  0 4px 18px rgba(0,0,0,.10);
+
+  transition:
+  transform .2s ease,
+  box-shadow .2s ease;
+
+}
+
+.post-card:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 7px 24px rgba(0,0,0,.14);
+
+}
+
+
+/* =========================
+   MEDIA
+========================= */
+
+.post-media{
+
+  width:100%;
+
+  display:block;
+
+  background:#000;
+
 }
 
 
 /* IMAGE */
 
 .post-card img{
+
   width:100%;
-  max-height:450px;
+
+  max-height:500px;
+
   object-fit:cover;
+
   display:block;
+
 }
 
 
 /* VIDEO */
 
 .post-card video{
+
   width:100%;
-  max-height:450px;
+
+  max-height:500px;
+
   display:block;
+
   background:#000;
+
 }
 
 
-/* CONTENT */
+/* =========================
+   CONTENT
+========================= */
 
 .post-content{
-  padding:18px;
+
+  padding:20px;
+
 }
 
 .post-content h3{
+
   color:#075b32;
+
   font-size:21px;
-  margin-bottom:8px;
+
+  margin-bottom:9px;
+
+  word-break:break-word;
+
 }
 
 .post-content p{
+
   color:#555;
+
   white-space:pre-wrap;
+
   word-break:break-word;
+
 }
 
 
-/* LOADING */
+/* =========================
+   DATE
+========================= */
+
+.post-date{
+
+  display:block;
+
+  color:#888;
+
+  font-size:13px;
+
+  margin-top:12px;
+
+}
+
+
+/* =========================
+   LOADING
+========================= */
 
 .loading{
+
   text-align:center;
-  padding:35px;
+
+  padding:40px;
+
   color:#075b32;
+
   font-weight:bold;
+
 }
 
 
-/* EMPTY */
+/* =========================
+   EMPTY
+========================= */
 
 .empty{
+
   background:white;
+
   border-radius:12px;
-  padding:30px;
+
+  padding:35px;
+
   text-align:center;
+
   color:#777;
+
 }
 
 
-/* ERROR */
+/* =========================
+   ERROR
+========================= */
 
 .error{
+
   background:white;
+
   border-radius:12px;
-  padding:30px;
+
+  padding:35px;
+
   text-align:center;
+
   color:#b00020;
+
+  word-break:break-word;
+
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+
   background:#075b32;
+
   color:white;
+
   text-align:center;
-  padding:25px 15px;
+
+  padding:28px 15px;
+
   margin-top:30px;
+
+}
+
+footer p{
+
+  margin:4px 0;
+
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
+  header{
+
+    padding:28px 15px;
+
+  }
+
   header h1{
+
     font-size:24px;
+
   }
 
   .logo{
+
     width:95px;
+
     height:95px;
+
+  }
+
+  .hero{
+
+    padding:35px 18px;
+
   }
 
   .hero h2{
+
     font-size:23px;
+
+  }
+
+  .hero p{
+
+    font-size:15px;
+
   }
 
   #posts{
+
     grid-template-columns:1fr;
+
   }
+
+  .post-card img,
+  .post-card video{
+
+    max-height:450px;
+
+  }
+
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+a:focus,
+button:focus{
+
+  outline:3px solid #0b7a43;
+
+  outline-offset:3px;
 
 }
 
@@ -246,14 +578,18 @@ footer{
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
-<header>
+<header id="home">
 
   <img
     src="IMG_3240.jpeg"
-    alt="MK Youth Mobilizers"
+    alt="MK Youth Mobilizers Media Team Tarauni logo"
     class="logo"
+    width="115"
+    height="115"
     onerror="this.style.display='none'"
   >
 
@@ -268,9 +604,15 @@ footer{
 </header>
 
 
-<!-- NAV -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-<nav>
+<nav aria-label="Main navigation">
+
+  <a href="#home">
+    Home
+  </a>
 
   <a href="#latest-posts">
     Latest Posts
@@ -279,32 +621,44 @@ footer{
 </nav>
 
 
-<!-- INTRO -->
+<!-- =========================
+     HERO
+========================= -->
 
-<section class="hero">
+<section
+  class="hero"
+  aria-labelledby="welcome-title"
+>
 
-  <h2>
+  <h2 id="welcome-title">
     Welcome to MK Youth Mobilizers
   </h2>
 
   <p>
+
     MK Youth Mobilizers is a youth-focused platform
     dedicated to connecting, inspiring and empowering
     young people. We promote unity, leadership,
     teamwork and positive development.
+
   </p>
 
 </section>
 
 
-<!-- POSTS -->
+<!-- =========================
+     LATEST POSTS
+========================= -->
+
+<main>
 
 <section
   class="posts-section"
   id="latest-posts"
+  aria-labelledby="posts-title"
 >
 
-  <h2>
+  <h2 id="posts-title">
     Latest Posts
   </h2>
 
@@ -318,8 +672,12 @@ footer{
 
 </section>
 
+</main>
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -331,12 +689,21 @@ footer{
     Media Team Tarauni
   </p>
 
+  <p>
+    Connecting • Inspiring • Empowering
+  </p>
+
 </footer>
 
 
-<!-- SUPABASE -->
+<!-- =========================
+     SUPABASE
+========================= -->
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
 
 <script>
 
@@ -352,7 +719,34 @@ const SUPABASE_KEY =
 
 
 /* =========================
-   CREATE SUPABASE CLIENT
+   CHECK SUPABASE
+========================= */
+
+if(!window.supabase){
+
+  document.getElementById("posts").innerHTML = `
+
+    <div class="error">
+
+      ❌ Supabase failed to load.
+
+      <br><br>
+
+      Please refresh the page.
+
+    </div>
+
+  `;
+
+  throw new Error(
+    "Supabase library failed to load."
+  );
+
+}
+
+
+/* =========================
+   CREATE CLIENT
 ========================= */
 
 const client =
@@ -371,21 +765,182 @@ document.getElementById("posts");
 
 
 /* =========================
+   CHECK VIDEO
+========================= */
+
+function isVideoUrl(url){
+
+  if(!url){
+    return false;
+  }
+
+  const cleanUrl =
+    url.split("?")[0]
+       .split("#")[0]
+       .toLowerCase();
+
+  return (
+
+    cleanUrl.endsWith(".mp4") ||
+
+    cleanUrl.endsWith(".webm") ||
+
+    cleanUrl.endsWith(".mov") ||
+
+    cleanUrl.endsWith(".m4v") ||
+
+    cleanUrl.endsWith(".ogg")
+
+  );
+
+}
+
+
+/* =========================
+   FORMAT DATE
+========================= */
+
+function formatDate(value){
+
+  if(!value){
+    return "";
+  }
+
+  const date =
+    new Date(value);
+
+  if(
+    Number.isNaN(
+      date.getTime()
+    )
+  ){
+
+    return "";
+
+  }
+
+  return date.toLocaleDateString(
+    "en-NG",
+    {
+      year:"numeric",
+      month:"long",
+      day:"numeric"
+    }
+  );
+
+}
+
+
+/* =========================
+   CREATE MEDIA
+========================= */
+
+function createMedia(
+  mediaUrl,
+  title
+){
+
+  if(
+    !mediaUrl
+  ){
+
+    return null;
+
+  }
+
+
+  /* VIDEO */
+
+  if(
+    isVideoUrl(
+      mediaUrl
+    )
+  ){
+
+    const video =
+    document.createElement(
+      "video"
+    );
+
+    video.className =
+    "post-media";
+
+    video.src =
+    mediaUrl;
+
+    video.controls =
+    true;
+
+    video.playsInline =
+    true;
+
+    video.preload =
+    "metadata";
+
+    video.setAttribute(
+      "aria-label",
+      title || "Post video"
+    );
+
+    return video;
+
+  }
+
+
+  /* IMAGE */
+
+  const img =
+  document.createElement(
+    "img"
+  );
+
+  img.className =
+  "post-media";
+
+  img.src =
+  mediaUrl;
+
+  img.alt =
+  title ||
+  "MK Youth Mobilizers post";
+
+  img.loading =
+  "lazy";
+
+  img.decoding =
+  "async";
+
+  img.onerror =
+  function(){
+
+    this.style.display =
+    "none";
+
+  };
+
+  return img;
+
+}
+
+
+/* =========================
    LOAD POSTS
 ========================= */
 
 async function loadPosts(){
 
   postsContainer.innerHTML = `
+
     <div class="loading">
-      Loading posts...
+      Loading latest posts...
     </div>
+
   `;
 
 
   try{
 
-    const { data, error } =
+    const result =
     await client
     .from("posts")
     .select("*")
@@ -397,25 +952,36 @@ async function loadPosts(){
     );
 
 
-    if(error){
+    if(result.error){
 
-      throw error;
+      console.error(
+        "Supabase error:",
+        result.error
+      );
+
+      throw result.error;
 
     }
 
 
     const posts =
-    data || [];
+    result.data || [];
 
 
     /* NO POSTS */
 
-    if(posts.length === 0){
+    if(
+      posts.length === 0
+    ){
 
       postsContainer.innerHTML = `
+
         <div class="empty">
+
           No posts yet.
+
         </div>
+
       `;
 
       return;
@@ -423,7 +989,8 @@ async function loadPosts(){
     }
 
 
-    postsContainer.innerHTML = "";
+    postsContainer.innerHTML =
+    "";
 
 
     /* =========================
@@ -443,74 +1010,33 @@ async function loadPosts(){
 
 
         /* =========================
+           TITLE
+        ========================= */
+
+        const postTitle =
+        post.Title ||
+        "MK Youth Mobilizers";
+
+
+        /* =========================
            MEDIA
         ========================= */
 
-        if(post.Image_url){
+        if(
+          post.Image_url
+        ){
 
-          const mediaUrl =
-          post.Image_url;
-
-          const lower =
-          mediaUrl.toLowerCase();
-
-
-          const isVideo =
-            lower.includes(".mp4") ||
-            lower.includes(".webm") ||
-            lower.includes(".mov") ||
-            lower.includes(".m4v");
+          const media =
+          createMedia(
+            post.Image_url,
+            postTitle
+          );
 
 
-          /* VIDEO */
-
-          if(isVideo){
-
-            const video =
-            document.createElement(
-              "video"
-            );
-
-            video.src =
-            mediaUrl;
-
-            video.controls =
-            true;
-
-            video.playsInline =
-            true;
-
-            video.preload =
-            "metadata";
+          if(media){
 
             card.appendChild(
-              video
-            );
-
-          }
-
-
-          /* IMAGE */
-
-          else{
-
-            const img =
-            document.createElement(
-              "img"
-            );
-
-            img.src =
-            mediaUrl;
-
-            img.alt =
-            post.Title ||
-            "MK Youth Mobilizers";
-
-            img.loading =
-            "lazy";
-
-            card.appendChild(
-              img
+              media
             );
 
           }
@@ -537,27 +1063,59 @@ async function loadPosts(){
         );
 
         title.textContent =
-        post.Title ||
-        "Untitled Post";
-
-
-        const text =
-        document.createElement(
-          "p"
-        );
-
-        text.textContent =
-        post.Content ||
-        "";
+        postTitle;
 
 
         content.appendChild(
           title
         );
 
-        content.appendChild(
-          text
-        );
+
+        /* POST TEXT */
+
+        if(
+          post.Content
+        ){
+
+          const text =
+          document.createElement(
+            "p"
+          );
+
+          text.textContent =
+          post.Content;
+
+          content.appendChild(
+            text
+          );
+
+        }
+
+
+        /* DATE */
+
+        if(
+          post.created_at
+        ){
+
+          const date =
+          document.createElement(
+            "small"
+          );
+
+          date.className =
+          "post-date";
+
+          date.textContent =
+          formatDate(
+            post.created_at
+          );
+
+          content.appendChild(
+            date
+          );
+
+        }
 
 
         card.appendChild(
@@ -572,23 +1130,30 @@ async function loadPosts(){
       }
     );
 
+
   }
 
 
   catch(error){
 
     console.error(
-      "Supabase error:",
+      "Unable to load posts:",
       error
     );
 
 
     postsContainer.innerHTML = `
+
       <div class="error">
+
         ❌ Unable to load posts.
+
         <br><br>
-        Please try again later.
+
+        Please refresh the website.
+
       </div>
+
     `;
 
   }
@@ -597,10 +1162,20 @@ async function loadPosts(){
 
 
 /* =========================
-   START
+   START WEBSITE
 ========================= */
 
 loadPosts();
+
+
+/* =========================
+   AUTO REFRESH
+========================= */
+
+setInterval(
+  loadPosts,
+  60000
+);
 
 </script>
 
