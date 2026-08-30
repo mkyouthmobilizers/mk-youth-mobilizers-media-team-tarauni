@@ -653,6 +653,8 @@ loginMsg(
 );
 
 
+try{
+
 const result =
 await client.auth.signInWithPassword({
 
@@ -663,19 +665,9 @@ password:password
 });
 
 
-loginBtn.disabled =
-false;
-
-
 if(result.error){
 
-loginMsg(
-"❌ " +
-result.error.message,
-"error"
-);
-
-return;
+throw result.error;
 
 }
 
@@ -687,6 +679,20 @@ loginMsg(
 
 
 showAdmin();
+
+}
+catch(error){
+
+loginMsg(
+"❌ " + error.message,
+"error"
+);
+
+}
+
+
+loginBtn.disabled =
+false;
 
 });
 
@@ -956,12 +962,6 @@ await uploadMedia(file);
 
 
 if(editingId){
-
-showMessage(
-"Updating post...",
-"success"
-);
-
 
 const result =
 await client
@@ -1519,9 +1519,9 @@ await client
 
 id:1,
 
-video_url:url,
+youtube_id:videoId,
 
-is_live:true
+active:true
 
 });
 
@@ -1583,7 +1583,7 @@ await client
 .from("live_stream")
 .update({
 
-is_live:false
+active:false
 
 })
 .eq(
@@ -1635,7 +1635,7 @@ try{
 const result =
 await client
 .from("live_stream")
-.select("*")
+.select("id,youtube_id,active")
 .eq(
 "id",
 1
@@ -1652,12 +1652,13 @@ throw result.error;
 
 if(
 result.data &&
-result.data.is_live === true
+result.data.active === true &&
+result.data.youtube_id
 ){
 
 liveUrl.value =
-result.data.video_url ||
-"";
+"https://www.youtube.com/watch?v=" +
+result.data.youtube_id;
 
 
 liveStatus.textContent =
@@ -1690,12 +1691,6 @@ liveStatus.textContent =
 
 }
 
-
-/* =========================
-START
-========================= */
-
-loadLive();
 
 </script>
 
