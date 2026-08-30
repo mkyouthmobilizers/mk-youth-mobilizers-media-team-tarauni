@@ -34,8 +34,6 @@ rel="canonical"
 href="https://mkyouthmobilizers.github.io/mk-youth-mobilizers-media-team-tarauni/"
 >
 
-<!-- Open Graph -->
-
 <meta
 property="og:title"
 content="MK Youth Mobilizers | Media Team Tarauni"
@@ -78,7 +76,9 @@ body{
 }
 
 
-/* HEADER */
+/* =========================
+HEADER
+========================= */
 
 header{
   background:linear-gradient(
@@ -112,7 +112,9 @@ header p{
 }
 
 
-/* NAV */
+/* =========================
+NAV
+========================= */
 
 nav{
   background:white;
@@ -131,7 +133,9 @@ nav a{
 }
 
 
-/* HERO */
+/* =========================
+HERO
+========================= */
 
 .hero{
   max-width:900px;
@@ -152,7 +156,9 @@ nav a{
 }
 
 
-/* VISITORS */
+/* =========================
+VISITORS
+========================= */
 
 .visitor-box{
   max-width:500px;
@@ -165,7 +171,7 @@ nav a{
 }
 
 .visitor-box .icon{
-  font-size:28px;
+  font-size:30px;
 }
 
 .visitor-box h3{
@@ -175,14 +181,16 @@ nav a{
 }
 
 #visitorCount{
-  font-size:28px;
+  font-size:30px;
   font-weight:bold;
   color:#075b32;
   margin-top:5px;
 }
 
 
-/* LIVE */
+/* =========================
+LIVE
+========================= */
 
 .live-section{
   max-width:1000px;
@@ -202,12 +210,13 @@ nav a{
   color:#b00020;
   font-size:24px;
   font-weight:bold;
-  margin-bottom:15px;
+  margin-bottom:10px;
 }
 
 .live-status{
   color:#777;
   margin-bottom:15px;
+  font-weight:bold;
 }
 
 .live-frame{
@@ -220,7 +229,9 @@ nav a{
 }
 
 
-/* POSTS */
+/* =========================
+POSTS
+========================= */
 
 .posts-section{
   max-width:1100px;
@@ -239,11 +250,14 @@ nav a{
   display:grid;
   grid-template-columns:
   repeat(auto-fit,minmax(280px,1fr));
+
   gap:22px;
 }
 
 
-/* POST CARD */
+/* =========================
+POST CARD
+========================= */
 
 .post-card{
   background:white;
@@ -284,7 +298,9 @@ nav a{
 }
 
 
-/* LOADING */
+/* =========================
+LOADING
+========================= */
 
 .loading{
   text-align:center;
@@ -294,7 +310,9 @@ nav a{
 }
 
 
-/* EMPTY */
+/* =========================
+EMPTY
+========================= */
 
 .empty{
   background:white;
@@ -305,7 +323,9 @@ nav a{
 }
 
 
-/* ERROR */
+/* =========================
+ERROR
+========================= */
 
 .error{
   background:white;
@@ -316,7 +336,9 @@ nav a{
 }
 
 
-/* FOOTER */
+/* =========================
+FOOTER
+========================= */
 
 footer{
   background:#075b32;
@@ -331,7 +353,9 @@ footer p{
 }
 
 
-/* MOBILE */
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:600px){
 
@@ -366,7 +390,9 @@ footer p{
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+HEADER
+========================= -->
 
 <header>
 
@@ -388,7 +414,9 @@ Media Team Tarauni
 </header>
 
 
-<!-- NAV -->
+<!-- =========================
+NAV
+========================= -->
 
 <nav>
 
@@ -405,7 +433,9 @@ Latest Posts
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+HERO
+========================= -->
 
 <section class="hero">
 
@@ -423,7 +453,9 @@ teamwork and positive development.
 </section>
 
 
-<!-- VISITOR COUNTER -->
+<!-- =========================
+VISITOR COUNTER
+========================= -->
 
 <div class="visitor-box">
 
@@ -442,7 +474,9 @@ Loading...
 </div>
 
 
-<!-- LIVE -->
+<!-- =========================
+LIVE
+========================= -->
 
 <section
 class="live-section"
@@ -474,7 +508,9 @@ allowfullscreen
 </section>
 
 
-<!-- POSTS -->
+<!-- =========================
+POSTS
+========================= -->
 
 <section
 class="posts-section"
@@ -496,7 +532,9 @@ Loading posts...
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
@@ -511,7 +549,9 @@ Media Team Tarauni
 </footer>
 
 
-<!-- SUPABASE -->
+<!-- =========================
+SUPABASE
+========================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -520,7 +560,7 @@ Media Team Tarauni
 
 
 /* =========================
-SUPABASE CONFIG
+SUPABASE
 ========================= */
 
 const SUPABASE_URL =
@@ -747,7 +787,9 @@ visitorCount.textContent =
 
 try{
 
-/* ADD VISITOR */
+/*
+Add one visitor
+*/
 
 const { error: insertError } =
 await client
@@ -765,25 +807,21 @@ insertError
 }
 
 
-/* COUNT VISITORS */
+/*
+Get visitor total
+*/
 
-const { count, error: countError } =
+const { data, error } =
 await client
 .from("visitors")
-.select(
-"id",
-{
-count:"exact",
-head:true
-}
-);
+.select("id");
 
 
-if(countError){
+if(error){
 
 console.error(
-"Visitor count error:",
-countError
+"Visitor select error:",
+error
 );
 
 visitorCount.textContent =
@@ -794,10 +832,12 @@ return;
 }
 
 
+/*
+Show total
+*/
+
 visitorCount.textContent =
-Number(
-count || 0
-).toLocaleString();
+data.length.toLocaleString();
 
 }
 
@@ -828,7 +868,7 @@ const parsed =
 new URL(url);
 
 
-/* WATCH */
+/* YouTube watch */
 
 if(
 parsed.hostname.includes(
@@ -843,7 +883,7 @@ return parsed.searchParams.get(
 }
 
 
-/* SHORT */
+/* YouTube short */
 
 if(
 parsed.hostname ===
@@ -880,6 +920,9 @@ liveStatus.textContent =
 
 liveFrame.style.display =
 "none";
+
+liveFrame.src =
+"";
 
 
 try{
