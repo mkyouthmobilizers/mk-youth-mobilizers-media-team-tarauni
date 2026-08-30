@@ -59,6 +59,7 @@ content="width=device-width, initial-scale=1.0">
   content="https://mkyouthmobilizers.github.io/mk-youth-mobilizers-media-team-tarauni/IMG_3240.jpeg"
 >
 
+
 <style>
 
 *{
@@ -73,6 +74,7 @@ body{
   color:#222;
   line-height:1.6;
 }
+
 
 /* HEADER */
 
@@ -107,6 +109,7 @@ header p{
   font-size:16px;
 }
 
+
 /* NAV */
 
 nav{
@@ -114,6 +117,7 @@ nav{
   padding:15px;
   text-align:center;
   box-shadow:0 2px 10px rgba(0,0,0,.08);
+
   position:sticky;
   top:0;
   z-index:10;
@@ -124,6 +128,7 @@ nav a{
   text-decoration:none;
   font-weight:bold;
 }
+
 
 /* HERO */
 
@@ -145,20 +150,26 @@ nav a{
   font-size:16px;
 }
 
-/* VISITOR COUNTER */
+
+/* VISITORS */
 
 .visitor-box{
   max-width:500px;
   margin:0 auto 35px;
-  padding:20px;
+  padding:18px;
+
   background:white;
+
   border-radius:15px;
+
   text-align:center;
-  box-shadow:0 4px 18px rgba(0,0,0,.08);
+
+  box-shadow:
+    0 4px 18px rgba(0,0,0,.08);
 }
 
 .visitor-box .icon{
-  font-size:30px;
+  font-size:28px;
 }
 
 .visitor-box h3{
@@ -168,57 +179,150 @@ nav a{
 }
 
 #visitorCount{
-  font-size:32px;
+  font-size:28px;
   font-weight:bold;
   color:#075b32;
   margin-top:5px;
 }
+
+
+/* LIVE */
+
+.live-section{
+  max-width:900px;
+  margin:0 auto 40px;
+  padding:0 15px;
+}
+
+.live-box{
+  display:none;
+
+  background:white;
+
+  border-radius:16px;
+
+  padding:18px;
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,.12);
+}
+
+.live-title{
+  text-align:center;
+
+  color:#d00000;
+
+  font-size:24px;
+
+  font-weight:bold;
+
+  margin-bottom:15px;
+}
+
+.live-frame{
+  width:100%;
+
+  aspect-ratio:16/9;
+
+  border:0;
+
+  border-radius:12px;
+
+  display:block;
+
+  background:#000;
+}
+
+.live-off{
+  max-width:500px;
+  margin:auto;
+
+  background:white;
+
+  border-radius:15px;
+
+  padding:20px;
+
+  text-align:center;
+
+  color:#777;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,.07);
+}
+
 
 /* POSTS */
 
 .posts-section{
   max-width:1100px;
   margin:auto;
-  padding:10px 15px 50px;
+
+  padding:
+    10px 15px 50px;
 }
 
 .posts-section > h2{
   text-align:center;
+
   color:#075b32;
+
   font-size:28px;
+
   margin-bottom:25px;
 }
 
 #posts{
   display:grid;
+
   grid-template-columns:
-  repeat(auto-fit,minmax(280px,1fr));
+    repeat(auto-fit,minmax(280px,1fr));
+
   gap:22px;
 }
+
 
 /* POST CARD */
 
 .post-card{
   background:white;
+
   border-radius:15px;
+
   overflow:hidden;
+
   box-shadow:
     0 4px 18px rgba(0,0,0,.10);
 }
 
+
+/* IMAGE */
+
 .post-card img{
   width:100%;
+
   max-height:450px;
+
   object-fit:cover;
+
   display:block;
 }
 
+
+/* VIDEO */
+
 .post-card video{
   width:100%;
+
   max-height:450px;
+
   display:block;
+
   background:#000;
 }
+
+
+/* CONTENT */
 
 .post-content{
   padding:18px;
@@ -226,58 +330,82 @@ nav a{
 
 .post-content h3{
   color:#075b32;
+
   font-size:21px;
+
   margin-bottom:8px;
 }
 
 .post-content p{
   color:#555;
+
   white-space:pre-wrap;
+
   word-break:break-word;
 }
+
 
 /* LOADING */
 
 .loading{
   text-align:center;
+
   padding:35px;
+
   color:#075b32;
+
   font-weight:bold;
 }
+
 
 /* EMPTY */
 
 .empty{
   background:white;
+
   border-radius:12px;
+
   padding:30px;
+
   text-align:center;
+
   color:#777;
 }
+
 
 /* ERROR */
 
 .error{
   background:white;
+
   border-radius:12px;
+
   padding:30px;
+
   text-align:center;
+
   color:#b00020;
 }
+
 
 /* FOOTER */
 
 footer{
   background:#075b32;
+
   color:white;
+
   text-align:center;
+
   padding:28px 15px;
+
   margin-top:30px;
 }
 
 footer p{
   margin:3px 0;
 }
+
 
 /* MOBILE */
 
@@ -310,7 +438,9 @@ footer p{
 
 </head>
 
+
 <body>
+
 
 <!-- HEADER -->
 
@@ -337,6 +467,12 @@ footer p{
 <!-- NAV -->
 
 <nav>
+
+  <a href="#live">
+    🔴 Live
+  </a>
+
+  &nbsp;&nbsp;|&nbsp;&nbsp;
 
   <a href="#latest-posts">
     Latest Posts
@@ -382,6 +518,45 @@ footer p{
 </div>
 
 
+<!-- LIVE SECTION -->
+
+<section
+  class="live-section"
+  id="live"
+>
+
+  <div
+    class="live-box"
+    id="liveBox"
+  >
+
+    <div class="live-title">
+      🔴 LIVE NOW
+    </div>
+
+    <iframe
+      id="liveFrame"
+      class="live-frame"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen
+      title="MK Youth Mobilizers Live"
+    ></iframe>
+
+  </div>
+
+
+  <div
+    class="live-off"
+    id="liveOff"
+  >
+
+    🔴 No Live Stream Right Now
+
+  </div>
+
+</section>
+
+
 <!-- POSTS -->
 
 <section
@@ -423,10 +598,11 @@ footer p{
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+
 <script>
 
 /* =========================
-   SUPABASE CONFIG
+SUPABASE CONFIG
 ========================= */
 
 const SUPABASE_URL =
@@ -436,10 +612,6 @@ const SUPABASE_KEY =
 "sb_publishable_hsMkfMvXMbAXXt8Z7LvAvg_52miDaJe";
 
 
-/* =========================
-   CREATE SUPABASE CLIENT
-========================= */
-
 const client =
 window.supabase.createClient(
   SUPABASE_URL,
@@ -448,7 +620,7 @@ window.supabase.createClient(
 
 
 /* =========================
-   ELEMENTS
+ELEMENTS
 ========================= */
 
 const postsContainer =
@@ -457,9 +629,18 @@ document.getElementById("posts");
 const visitorCount =
 document.getElementById("visitorCount");
 
+const liveBox =
+document.getElementById("liveBox");
+
+const liveOff =
+document.getElementById("liveOff");
+
+const liveFrame =
+document.getElementById("liveFrame");
+
 
 /* =========================
-   LOAD POSTS
+LOAD POSTS
 ========================= */
 
 async function loadPosts(){
@@ -472,10 +653,8 @@ async function loadPosts(){
 
   try{
 
-    const {
-      data,
-      error
-    } = await client
+    const { data,error } =
+      await client
       .from("posts")
       .select("*")
       .order(
@@ -522,9 +701,7 @@ async function loadPosts(){
         "post-card";
 
 
-      /* =========================
-         MEDIA
-      ========================= */
+      /* MEDIA */
 
       if(post.Image_url){
 
@@ -585,9 +762,7 @@ async function loadPosts(){
       }
 
 
-      /* =========================
-         CONTENT
-      ========================= */
+      /* CONTENT */
 
       const content =
         document.createElement("div");
@@ -627,9 +802,10 @@ async function loadPosts(){
   catch(error){
 
     console.error(
-      "Supabase posts error:",
+      "Supabase error:",
       error
     );
+
 
     postsContainer.innerHTML = `
       <div class="error">
@@ -645,17 +821,17 @@ async function loadPosts(){
 
 
 /* =========================
-   VISITOR COUNTER
+VISITOR COUNTER
 ========================= */
 
 async function updateVisitorCounter(){
 
   try{
 
-    /* Add this visit */
+    /* ADD VISITOR */
 
-    const {
-      error:insertError
+    const { error:
+      insertError
     } = await client
       .from("visitors")
       .insert({});
@@ -663,35 +839,40 @@ async function updateVisitorCounter(){
 
     if(insertError){
 
-      console.error(
-        "Visitor insert error:",
-        insertError
-      );
+      throw insertError;
 
     }
 
 
-    /* Get total visitors */
+    /* COUNT */
 
     const {
-      data,
-      error
-    } = await client.rpc(
-      "get_visitor_count"
-    );
+      count,
+      error:
+        countError
+    } = await client
+      .from("visitors")
+      .select(
+        "id",
+        {
+          count:"exact",
+          head:true
+        }
+      );
 
 
-    if(error){
+    if(countError){
 
-      throw error;
+      throw countError;
 
     }
 
 
     visitorCount.textContent =
       Number(
-        data || 0
+        count || 0
       ).toLocaleString();
+
 
   }
 
@@ -702,8 +883,9 @@ async function updateVisitorCounter(){
       error
     );
 
+
     visitorCount.textContent =
-      "0";
+      "—";
 
   }
 
@@ -711,12 +893,124 @@ async function updateVisitorCounter(){
 
 
 /* =========================
-   START
+LOAD LIVE
+========================= */
+
+async function loadLive(){
+
+  try{
+
+    const {
+      data,
+      error
+    } = await client
+      .from("live_stream")
+      .select(
+        "youtube_id,active"
+      )
+      .eq(
+        "id",
+        1
+      )
+      .maybeSingle();
+
+
+    if(error){
+
+      console.error(
+        "Live error:",
+        error
+      );
+
+      showLiveOff();
+
+      return;
+
+    }
+
+
+    if(
+      data &&
+      data.active &&
+      data.youtube_id
+    ){
+
+      const videoId =
+        data.youtube_id;
+
+
+      liveFrame.src =
+        "https://www.youtube.com/embed/" +
+        encodeURIComponent(videoId) +
+        "?autoplay=1&rel=0";
+
+
+      liveBox.style.display =
+        "block";
+
+      liveOff.style.display =
+        "none";
+
+    }
+
+    else{
+
+      showLiveOff();
+
+    }
+
+  }
+
+  catch(error){
+
+    console.error(
+      error
+    );
+
+    showLiveOff();
+
+  }
+
+}
+
+
+/* =========================
+LIVE OFF
+========================= */
+
+function showLiveOff(){
+
+  liveBox.style.display =
+    "none";
+
+  liveFrame.src =
+    "";
+
+  liveOff.style.display =
+    "block";
+
+}
+
+
+/* =========================
+START
 ========================= */
 
 loadPosts();
 
 updateVisitorCounter();
+
+loadLive();
+
+
+/* =========================
+AUTO CHECK LIVE
+========================= */
+
+setInterval(
+  loadLive,
+  30000
+);
 
 </script>
 
