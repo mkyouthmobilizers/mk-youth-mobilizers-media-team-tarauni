@@ -435,6 +435,11 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
 "sb_publishable_hsMkfMvXMbAXXt8Z7LvAvg_52miDaJe";
 
+
+/* =========================
+   CREATE SUPABASE CLIENT
+========================= */
+
 const client =
 window.supabase.createClient(
   SUPABASE_URL,
@@ -480,11 +485,13 @@ async function loadPosts(){
         }
       );
 
+
     if(error){
 
       throw error;
 
     }
+
 
     const posts =
       data || [];
@@ -515,7 +522,9 @@ async function loadPosts(){
         "post-card";
 
 
-      /* MEDIA */
+      /* =========================
+         MEDIA
+      ========================= */
 
       if(post.Image_url){
 
@@ -576,7 +585,9 @@ async function loadPosts(){
       }
 
 
-      /* CONTENT */
+      /* =========================
+         CONTENT
+      ========================= */
 
       const content =
         document.createElement("div");
@@ -616,7 +627,7 @@ async function loadPosts(){
   catch(error){
 
     console.error(
-      "Posts error:",
+      "Supabase posts error:",
       error
     );
 
@@ -641,7 +652,7 @@ async function updateVisitorCounter(){
 
   try{
 
-    /* Add one visitor */
+    /* Add this visit */
 
     const {
       error:insertError
@@ -660,32 +671,26 @@ async function updateVisitorCounter(){
     }
 
 
-    /* Count all visitors */
+    /* Get total visitors */
 
     const {
-      count,
-      error:countError
-    } = await client
-      .from("visitors")
-      .select(
-        "id",
-        {
-          count:"exact",
-          head:true
-        }
-      );
+      data,
+      error
+    } = await client.rpc(
+      "get_visitor_count"
+    );
 
 
-    if(countError){
+    if(error){
 
-      throw countError;
+      throw error;
 
     }
 
 
     visitorCount.textContent =
       Number(
-        count || 0
+        data || 0
       ).toLocaleString();
 
   }
@@ -706,7 +711,7 @@ async function updateVisitorCounter(){
 
 
 /* =========================
-   START WEBSITE
+   START
 ========================= */
 
 loadPosts();
