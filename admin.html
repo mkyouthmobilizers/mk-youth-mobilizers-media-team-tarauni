@@ -219,6 +219,7 @@ button:disabled{
   background:#f1f1f1;
   margin-top:12px;
   font-weight:bold;
+  word-break:break-word;
 }
 
 .remove-live{
@@ -296,7 +297,7 @@ ADMIN AREA
 
 
 <!-- =========================
-CREATE POST
+POST
 ========================= -->
 
 <div class="box">
@@ -684,7 +685,8 @@ showAdmin();
 catch(error){
 
 loginMsg(
-"❌ " + error.message,
+"❌ " +
+error.message,
 "error"
 );
 
@@ -739,7 +741,7 @@ loginPassword.value =
 
 
 /* =========================
-CHECK SESSION
+SESSION
 ========================= */
 
 async function checkSession(){
@@ -1351,7 +1353,7 @@ cancelBtn.style.display =
 
 
 /* =========================
-DELETE POST
+DELETE
 ========================= */
 
 async function deletePost(post){
@@ -1424,7 +1426,7 @@ const parsed =
 new URL(url);
 
 
-/* youtube.com/watch?v= */
+/* YouTube watch link */
 
 if(
 parsed.hostname.includes("youtube.com")
@@ -1435,7 +1437,7 @@ return parsed.searchParams.get("v");
 }
 
 
-/* youtu.be/ID */
+/* YouTube short link */
 
 if(
 parsed.hostname === "youtu.be"
@@ -1491,7 +1493,7 @@ getYouTubeId(url);
 if(!videoId){
 
 liveMsg(
-"❌ Invalid YouTube video link.",
+"❌ Invalid YouTube Live video link.",
 "error"
 );
 
@@ -1542,13 +1544,13 @@ liveMsg(
 liveStatus.textContent =
 "🔴 LIVE IS ACTIVE";
 
-}
 
+}
 
 catch(error){
 
 console.error(
-"Live error:",
+"LIVE SAVE ERROR:",
 error
 );
 
@@ -1608,10 +1610,16 @@ liveMsg(
 liveStatus.textContent =
 "Live is currently OFF";
 
+
 }
 
-
 catch(error){
+
+console.error(
+"LIVE END ERROR:",
+error
+);
+
 
 liveMsg(
 "❌ " +
@@ -1630,12 +1638,18 @@ LOAD LIVE
 
 async function loadLive(){
 
+liveStatus.textContent =
+"Checking live status...";
+
+
 try{
 
 const result =
 await client
 .from("live_stream")
-.select("id,youtube_id,active")
+.select(
+"id,youtube_id,active"
+)
 .eq(
 "id",
 1
@@ -1645,7 +1659,16 @@ await client
 
 if(result.error){
 
-throw result.error;
+console.error(
+"LIVE LOAD ERROR:",
+result.error
+);
+
+liveStatus.textContent =
+"❌ " +
+result.error.message;
+
+return;
 
 }
 
@@ -1675,17 +1698,17 @@ liveStatus.textContent =
 
 }
 
-
 catch(error){
 
 console.error(
-"Live status error:",
+"LIVE LOAD ERROR:",
 error
 );
 
 
 liveStatus.textContent =
-"Unable to load Live status.";
+"❌ " +
+error.message;
 
 }
 
