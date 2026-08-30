@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MK Youth Mobilizers - Admin</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -50,7 +52,8 @@ label{
   margin:15px 0 7px;
 }
 
-input,textarea{
+input,
+textarea{
   width:100%;
   padding:14px;
   border:1px solid #ccc;
@@ -72,6 +75,10 @@ button{
   cursor:pointer;
 }
 
+button:disabled{
+  background:#999!important;
+}
+
 .login-btn,
 #publishBtn,
 #saveLiveBtn{
@@ -87,10 +94,6 @@ button{
   color:white;
   width:100%;
   margin-top:15px;
-}
-
-button:disabled{
-  background:#999!important;
 }
 
 .message{
@@ -193,6 +196,10 @@ button:disabled{
   display:none;
 }
 
+/* =========================
+   LIVE
+========================= */
+
 .live-box{
   border:2px solid #ddd;
   border-radius:14px;
@@ -210,10 +217,11 @@ button:disabled{
 
 .live-status{
   text-align:center;
-  padding:10px;
+  padding:12px;
   border-radius:8px;
   background:#f1f1f1;
-  margin-top:10px;
+  margin-top:15px;
+  font-weight:bold;
 }
 
 .remove-live{
@@ -222,224 +230,308 @@ button:disabled{
   background:#b00020;
   color:white;
 }
+
+.live-help{
+  background:#f7f7f7;
+  border-radius:10px;
+  padding:12px;
+  margin-top:15px;
+  font-size:14px;
+  color:#555;
+  line-height:1.5;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<!-- LOGIN -->
+
+<!-- =========================
+     LOGIN
+========================= -->
 
 <div class="box" id="loginArea">
 
-<h1>MK Youth Mobilizers</h1>
+  <h1>
+    MK Youth Mobilizers
+  </h1>
 
-<p class="subtitle">
-Admin Login
-</p>
+  <p class="subtitle">
+    Admin Login
+  </p>
 
-<label>Email</label>
+  <label>
+    Email
+  </label>
 
-<input
-type="email"
-id="loginEmail"
-placeholder="Enter admin Gmail"
-autocomplete="email"
->
+  <input
+    type="email"
+    id="loginEmail"
+    placeholder="Enter admin Gmail"
+    autocomplete="email"
+  >
 
-<label>Password</label>
+  <label>
+    Password
+  </label>
 
-<input
-type="password"
-id="loginPassword"
-placeholder="Enter admin password"
-autocomplete="current-password"
->
+  <input
+    type="password"
+    id="loginPassword"
+    placeholder="Enter admin password"
+    autocomplete="current-password"
+  >
 
-<button
-class="login-btn"
-id="loginBtn"
->
-🔐 Login
-</button>
+  <button
+    class="login-btn"
+    id="loginBtn"
+  >
+    🔐 Login
+  </button>
 
-<div
-id="loginMessage"
-class="message"
-></div>
+  <div
+    id="loginMessage"
+    class="message"
+  ></div>
 
 </div>
 
 
-<!-- ADMIN -->
+
+<!-- =========================
+     ADMIN AREA
+========================= -->
 
 <div id="adminArea">
 
-<!-- POST -->
+
+<!-- =========================
+     CREATE POST
+========================= -->
 
 <div class="box">
 
-<h1>MK Youth Mobilizers</h1>
+  <h1>
+    MK Youth Mobilizers
+  </h1>
 
-<p
-class="subtitle"
-id="formTitle"
->
-Create a new post
-</p>
+  <p
+    class="subtitle"
+    id="formTitle"
+  >
+    Create a new post
+  </p>
 
-<label>Post Title</label>
 
-<input
-type="text"
-id="title"
-placeholder="Enter post title"
->
+  <label>
+    Post Title
+  </label>
 
-<label>Post Content</label>
+  <input
+    type="text"
+    id="title"
+    placeholder="Enter post title"
+  >
 
-<textarea
-id="content"
-placeholder="Write your post here..."
-></textarea>
 
-<label>Choose Photo or Video</label>
+  <label>
+    Post Content
+  </label>
 
-<input
-type="file"
-id="media"
-accept="image/*,video/*"
->
+  <textarea
+    id="content"
+    placeholder="Write your post here..."
+  ></textarea>
 
-<div
-id="preview"
-class="preview"
-></div>
 
-<button
-id="publishBtn"
->
-Publish Post
-</button>
+  <label>
+    Choose Photo or Video
+  </label>
 
-<button
-id="cancelBtn"
-class="cancel-btn"
->
-Cancel Edit
-</button>
+  <input
+    type="file"
+    id="media"
+    accept="image/*,video/*"
+  >
 
-<div
-id="message"
-class="message"
-></div>
+
+  <div
+    id="preview"
+    class="preview"
+  ></div>
+
+
+  <button
+    id="publishBtn"
+  >
+    Publish Post
+  </button>
+
+
+  <button
+    id="cancelBtn"
+    class="cancel-btn"
+  >
+    Cancel Edit
+  </button>
+
+
+  <div
+    id="message"
+    class="message"
+  ></div>
 
 </div>
 
 
-<!-- LIVE -->
+
+<!-- =========================
+     YOUTUBE LIVE
+========================= -->
 
 <div class="box">
 
-<div class="live-title">
-🔴 YouTube LIVE
+  <div class="live-title">
+    🔴 YouTube LIVE
+  </div>
+
+  <p class="subtitle">
+    Paste your YouTube Live video link below.
+  </p>
+
+
+  <label>
+    YouTube Live Link
+  </label>
+
+  <input
+    type="text"
+    id="liveUrl"
+    placeholder="https://www.youtube.com/watch?v=XXXXXXXXXXX"
+  >
+
+
+  <button
+    id="saveLiveBtn"
+  >
+    🔴 Activate Live
+  </button>
+
+
+  <button
+    id="removeLiveBtn"
+    class="remove-live"
+  >
+    ⏹️ End Live
+  </button>
+
+
+  <div
+    id="liveMessage"
+    class="message"
+  ></div>
+
+
+  <div
+    id="liveStatus"
+    class="live-status"
+  >
+    Checking live status...
+  </div>
+
+
+  <div class="live-help">
+
+    <strong>How it works:</strong><br>
+
+    1. Start your Live on YouTube.<br>
+
+    2. Copy the YouTube Live video link.<br>
+
+    3. Paste the link above.<br>
+
+    4. Press 🔴 Activate Live.<br>
+
+    5. The public website can then show the Live stream.
+
+  </div>
+
 </div>
 
-<p class="subtitle">
-Paste your YouTube Live video link below.
-</p>
-
-<label>YouTube Live Link</label>
-
-<input
-type="text"
-id="liveUrl"
-placeholder="https://www.youtube.com/watch?v=XXXXXXXXXXX"
->
-
-<button
-id="saveLiveBtn"
->
-🔴 Activate Live
-</button>
-
-<button
-id="removeLiveBtn"
-class="remove-live"
->
-⏹️ End Live
-</button>
-
-<div
-id="liveMessage"
-class="message"
-></div>
-
-<div
-id="liveStatus"
-class="live-status"
->
-Checking live status...
-</div>
-
-</div>
 
 
-<!-- MANAGE POSTS -->
+<!-- =========================
+     MANAGE POSTS
+========================= -->
 
 <div class="box">
 
-<h2>
-Manage Posts
-</h2>
+  <h2>
+    Manage Posts
+  </h2>
 
-<div
-id="posts"
-style="margin-top:20px"
->
+  <div
+    id="posts"
+    style="margin-top:20px"
+  >
 
-<div class="empty">
-Loading posts...
+    <div class="empty">
+      Loading posts...
+    </div>
+
+  </div>
+
 </div>
 
-</div>
-
-</div>
 
 
-<!-- LOGOUT -->
+<!-- =========================
+     LOGOUT
+========================= -->
 
 <div class="box">
 
-<button
-id="logoutBtn"
-class="logout-btn"
->
-🚪 Logout
-</button>
+  <button
+    id="logoutBtn"
+    class="logout-btn"
+  >
+    🚪 Logout
+  </button>
 
 </div>
 
+
 </div>
+
 
 
 <a
-class="back"
-href="index.html"
+  class="back"
+  href="index.html"
 >
-← Back to Website
+  ← Back to Website
 </a>
+
 
 </div>
 
 
+
+<!-- =========================
+     SUPABASE
+========================= -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script>
 
 /* =========================
-SUPABASE
+   SUPABASE CONFIG
 ========================= */
 
 const SUPABASE_URL =
@@ -451,15 +543,17 @@ const SUPABASE_KEY =
 const BUCKET =
 "post-media";
 
+
 const client =
 window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_KEY
+  SUPABASE_URL,
+  SUPABASE_KEY
 );
 
 
+
 /* =========================
-ELEMENTS
+   ELEMENTS
 ========================= */
 
 const loginArea =
@@ -530,602 +624,799 @@ let editingId = null;
 let oldMediaUrl = null;
 
 
+
 /* =========================
-MESSAGES
+   MESSAGES
 ========================= */
 
 function loginMsg(text,type){
 
-loginMessage.textContent = text;
+  loginMessage.textContent =
+    text;
 
-loginMessage.className =
-"message " + type;
+  loginMessage.className =
+    "message " + type;
 
 }
 
 
 function showMessage(text,type){
 
-message.textContent = text;
+  message.textContent =
+    text;
 
-message.className =
-"message " + type;
+  message.className =
+    "message " + type;
 
 }
 
 
 function liveMsg(text,type){
 
-liveMessage.textContent = text;
+  liveMessage.textContent =
+    text;
 
-liveMessage.className =
-"message " + type;
+  liveMessage.className =
+    "message " + type;
 
 }
 
 
+
 /* =========================
-LOGIN
+   LOGIN
 ========================= */
 
 loginBtn.addEventListener(
 "click",
 async function(){
 
-const email =
-loginEmail.value.trim();
+  const email =
+    loginEmail.value.trim();
 
-const password =
-loginPassword.value;
+  const password =
+    loginPassword.value;
 
-if(!email || !password){
 
-loginMsg(
-"Please enter email and password.",
-"error"
-);
+  if(!email || !password){
 
-return;
-}
+    loginMsg(
+      "Please enter email and password.",
+      "error"
+    );
 
-loginBtn.disabled = true;
+    return;
 
-loginMsg(
-"Logging in...",
-"success"
-);
+  }
 
-const result =
-await client.auth.signInWithPassword({
-email:email,
-password:password
+
+  loginBtn.disabled =
+    true;
+
+
+  loginMsg(
+    "Logging in...",
+    "success"
+  );
+
+
+  try{
+
+    const result =
+      await client.auth.signInWithPassword({
+
+        email:email,
+
+        password:password
+
+      });
+
+
+    if(result.error){
+
+      throw result.error;
+
+    }
+
+
+    loginMsg(
+      "✅ Login successful!",
+      "success"
+    );
+
+
+    showAdmin();
+
+  }
+
+  catch(error){
+
+    loginMsg(
+      "❌ " + error.message,
+      "error"
+    );
+
+  }
+
+
+  loginBtn.disabled =
+    false;
+
 });
 
-loginBtn.disabled = false;
-
-if(result.error){
-
-loginMsg(
-"❌ " + result.error.message,
-"error"
-);
-
-return;
-}
-
-loginMsg(
-"✅ Login successful!",
-"success"
-);
-
-showAdmin();
-
-});
 
 
 /* =========================
-SHOW ADMIN
+   SHOW ADMIN
 ========================= */
 
 function showAdmin(){
 
-loginArea.style.display =
-"none";
+  loginArea.style.display =
+    "none";
 
-adminArea.style.display =
-"block";
+  adminArea.style.display =
+    "block";
 
-loadPosts();
+  loadPosts();
 
-loadLive();
+  loadLive();
 
 }
 
 
+
 /* =========================
-LOGOUT
+   LOGOUT
 ========================= */
 
 logoutBtn.addEventListener(
 "click",
 async function(){
 
-await client.auth.signOut();
+  await client.auth.signOut();
 
-adminArea.style.display =
-"none";
+  adminArea.style.display =
+    "none";
 
-loginArea.style.display =
-"block";
+  loginArea.style.display =
+    "block";
 
-loginPassword.value =
-"";
+  loginPassword.value =
+    "";
+
+  loginMsg(
+    "You have logged out.",
+    "success"
+  );
 
 });
 
 
+
 /* =========================
-SESSION
+   SESSION
 ========================= */
 
 async function checkSession(){
 
-const result =
-await client.auth.getSession();
+  const result =
+    await client.auth.getSession();
 
-if(result.data.session){
 
-showAdmin();
+  if(result.data.session){
 
-}
+    showAdmin();
+
+  }
 
 }
 
 checkSession();
 
 
+
 /* =========================
-FILE PREVIEW
+   FILE PREVIEW
 ========================= */
 
 mediaInput.addEventListener(
 "change",
 function(){
 
-preview.innerHTML = "";
+  preview.innerHTML =
+    "";
 
-const file =
-mediaInput.files[0];
 
-if(!file) return;
+  const file =
+    mediaInput.files[0];
 
-if(file.size >
-50 * 1024 * 1024){
 
-showMessage(
-"❌ File is larger than 50 MB.",
-"error"
-);
+  if(!file){
 
-mediaInput.value = "";
+    return;
 
-return;
-}
+  }
 
-const url =
-URL.createObjectURL(file);
 
-if(file.type.startsWith("image/")){
+  if(
+    file.size >
+    50 * 1024 * 1024
+  ){
 
-const img =
-document.createElement("img");
+    showMessage(
+      "❌ File is larger than 50 MB.",
+      "error"
+    );
 
-img.src = url;
+    mediaInput.value =
+      "";
 
-preview.appendChild(img);
+    return;
 
-}
+  }
 
-else if(file.type.startsWith("video/")){
 
-const video =
-document.createElement("video");
+  const url =
+    URL.createObjectURL(file);
 
-video.src = url;
 
-video.controls = true;
+  if(
+    file.type.startsWith("image/")
+  ){
 
-preview.appendChild(video);
+    const img =
+      document.createElement("img");
 
-}
+    img.src =
+      url;
+
+    preview.appendChild(
+      img
+    );
+
+  }
+
+
+  else if(
+    file.type.startsWith("video/")
+  ){
+
+    const video =
+      document.createElement("video");
+
+    video.src =
+      url;
+
+    video.controls =
+      true;
+
+    preview.appendChild(
+      video
+    );
+
+  }
 
 });
 
 
+
 /* =========================
-UPLOAD
+   UPLOAD MEDIA
 ========================= */
 
 async function uploadMedia(file){
 
-const safeName =
-file.name.replace(
-/[^a-zA-Z0-9.-]/g,
-"-"
-);
+  const safeName =
+    file.name.replace(
+      /[^a-zA-Z0-9.-]/g,
+      "-"
+    );
 
-const fileName =
-Date.now() +
-"-" +
-safeName;
 
-const result =
-await client.storage
-.from(BUCKET)
-.upload(
-fileName,
-file,
-{
-cacheControl:"3600",
-upsert:false,
-contentType:file.type
+  const fileName =
+    Date.now() +
+    "-" +
+    safeName;
+
+
+  const result =
+    await client.storage
+    .from(BUCKET)
+    .upload(
+      fileName,
+      file,
+      {
+        cacheControl:"3600",
+        upsert:false,
+        contentType:file.type
+      }
+    );
+
+
+  if(result.error){
+
+    throw new Error(
+      "Storage upload failed: " +
+      result.error.message
+    );
+
+  }
+
+
+  const publicUrl =
+    client.storage
+    .from(BUCKET)
+    .getPublicUrl(
+      fileName
+    )
+    .data
+    .publicUrl;
+
+
+  return publicUrl;
+
 }
-);
 
-if(result.error){
-
-throw new Error(
-"Storage upload failed: " +
-result.error.message
-);
-
-}
-
-return client.storage
-.from(BUCKET)
-.getPublicUrl(fileName)
-.data
-.publicUrl;
-
-}
 
 
 /* =========================
-CREATE / UPDATE POST
+   CREATE / UPDATE POST
 ========================= */
 
 publishBtn.addEventListener(
 "click",
 async function(){
 
-const title =
-titleInput.value.trim();
+  const title =
+    titleInput.value.trim();
 
-const content =
-contentInput.value.trim();
+  const content =
+    contentInput.value.trim();
 
-const file =
-mediaInput.files[0];
+  const file =
+    mediaInput.files[0];
 
-if(!title){
 
-showMessage(
-"Please enter a post title.",
-"error"
-);
+  if(!title){
 
-return;
-}
+    showMessage(
+      "Please enter a post title.",
+      "error"
+    );
 
-if(!content){
+    return;
 
-showMessage(
-"Please enter post content.",
-"error"
-);
+  }
 
-return;
-}
 
-publishBtn.disabled = true;
+  if(!content){
 
-try{
+    showMessage(
+      "Please enter post content.",
+      "error"
+    );
 
-let mediaUrl =
-oldMediaUrl;
+    return;
 
-if(file){
+  }
 
-showMessage(
-"Uploading media...",
-"success"
-);
 
-mediaUrl =
-await uploadMedia(file);
+  publishBtn.disabled =
+    true;
 
-}
 
-if(editingId){
+  try{
 
-const result =
-await client
-.from("posts")
-.update({
+    let mediaUrl =
+      oldMediaUrl;
 
-Title:title,
 
-Content:content,
+    if(file){
 
-Image_url:
-mediaUrl || null
+      showMessage(
+        "Uploading media...",
+        "success"
+      );
 
-})
-.eq(
-"id",
-editingId
-);
 
-if(result.error){
-throw result.error;
-}
+      mediaUrl =
+        await uploadMedia(
+          file
+        );
 
-showMessage(
-"✅ Post updated successfully!",
-"success"
-);
+    }
 
-}
 
-else{
+    if(editingId){
 
-const result =
-await client
-.from("posts")
-.insert([{
+      showMessage(
+        "Updating post...",
+        "success"
+      );
 
-Title:title,
 
-Content:content,
+      const result =
+        await client
+        .from("posts")
+        .update({
 
-Image_url:
-mediaUrl || null
+          Title:title,
 
-}]);
+          Content:content,
 
-if(result.error){
-throw result.error;
-}
+          Image_url:
+            mediaUrl || null
 
-showMessage(
-"✅ Post published successfully!",
-"success"
-);
+        })
+        .eq(
+          "id",
+          editingId
+        );
 
-}
 
-resetForm();
+      if(result.error){
 
-loadPosts();
+        throw result.error;
 
-}
+      }
 
-catch(error){
 
-console.error(error);
+      showMessage(
+        "✅ Post updated successfully!",
+        "success"
+      );
 
-showMessage(
-"❌ " + error.message,
-"error"
-);
+    }
 
-}
 
-publishBtn.disabled = false;
+    else{
+
+      showMessage(
+        "Publishing post...",
+        "success"
+      );
+
+
+      const result =
+        await client
+        .from("posts")
+        .insert([{
+
+          Title:title,
+
+          Content:content,
+
+          Image_url:
+            mediaUrl || null
+
+        }]);
+
+
+      if(result.error){
+
+        throw result.error;
+
+      }
+
+
+      showMessage(
+        "✅ Post published successfully!",
+        "success"
+      );
+
+    }
+
+
+    resetForm();
+
+    loadPosts();
+
+  }
+
+  catch(error){
+
+    console.error(
+      error
+    );
+
+
+    showMessage(
+      "❌ " + error.message,
+      "error"
+    );
+
+  }
+
+
+  publishBtn.disabled =
+    false;
 
 });
 
 
+
 /* =========================
-LOAD POSTS
+   LOAD POSTS
 ========================= */
 
 async function loadPosts(){
 
-postsContainer.innerHTML =
-'<div class="empty">Loading posts...</div>';
+  postsContainer.innerHTML =
+    '<div class="empty">Loading posts...</div>';
 
-const result =
-await client
-.from("posts")
-.select("*")
-.order(
-"id",
-{
-ascending:false
+
+  const result =
+    await client
+    .from("posts")
+    .select("*")
+    .order(
+      "id",
+      {
+        ascending:false
+      }
+    );
+
+
+  if(result.error){
+
+    postsContainer.innerHTML =
+      `<div class="empty">
+        ❌ ${result.error.message}
+      </div>`;
+
+    return;
+
+  }
+
+
+  const posts =
+    result.data || [];
+
+
+  if(posts.length === 0){
+
+    postsContainer.innerHTML =
+      '<div class="empty">No posts yet.</div>';
+
+    return;
+
+  }
+
+
+  postsContainer.innerHTML =
+    "";
+
+
+  posts.forEach(
+    function(post){
+
+      const card =
+        document.createElement("div");
+
+
+      card.className =
+        "post-card";
+
+
+      if(post.Image_url){
+
+        const url =
+          post.Image_url;
+
+        const lower =
+          url.toLowerCase();
+
+
+        if(
+          lower.includes(".mp4") ||
+          lower.includes(".webm") ||
+          lower.includes(".mov") ||
+          lower.includes(".m4v")
+        ){
+
+          const video =
+            document.createElement("video");
+
+          video.src =
+            url;
+
+          video.controls =
+            true;
+
+          video.playsInline =
+            true;
+
+          card.appendChild(
+            video
+          );
+
+        }
+
+
+        else{
+
+          const img =
+            document.createElement("img");
+
+          img.src =
+            url;
+
+          img.alt =
+            post.Title ||
+            "Post";
+
+          card.appendChild(
+            img
+          );
+
+        }
+
+      }
+
+
+      const title =
+        document.createElement("h3");
+
+      title.textContent =
+        post.Title ||
+        "Untitled";
+
+
+      const content =
+        document.createElement("p");
+
+      content.textContent =
+        post.Content ||
+        "";
+
+
+      card.appendChild(
+        title
+      );
+
+      card.appendChild(
+        content
+      );
+
+
+      const actions =
+        document.createElement("div");
+
+
+      actions.className =
+        "actions";
+
+
+      const editBtn =
+        document.createElement("button");
+
+
+      editBtn.className =
+        "edit-btn";
+
+
+      editBtn.textContent =
+        "✏️ Edit";
+
+
+      editBtn.onclick =
+        function(){
+
+          startEdit(
+            post
+          );
+
+        };
+
+
+      const deleteBtn =
+        document.createElement("button");
+
+
+      deleteBtn.className =
+        "delete-btn";
+
+
+      deleteBtn.textContent =
+        "🗑️ Delete";
+
+
+      deleteBtn.onclick =
+        function(){
+
+          deletePost(
+            post
+          );
+
+        };
+
+
+      actions.appendChild(
+        editBtn
+      );
+
+      actions.appendChild(
+        deleteBtn
+      );
+
+
+      card.appendChild(
+        actions
+      );
+
+
+      postsContainer.appendChild(
+        card
+      );
+
+    }
+  );
+
 }
-);
 
-if(result.error){
-
-postsContainer.innerHTML =
-`<div class="empty">
-❌ ${result.error.message}
-</div>`;
-
-return;
-}
-
-const posts =
-result.data || [];
-
-if(posts.length === 0){
-
-postsContainer.innerHTML =
-'<div class="empty">No posts yet.</div>';
-
-return;
-
-}
-
-postsContainer.innerHTML = "";
-
-posts.forEach(function(post){
-
-const card =
-document.createElement("div");
-
-card.className =
-"post-card";
-
-if(post.Image_url){
-
-const url =
-post.Image_url;
-
-const lower =
-url.toLowerCase();
-
-if(
-lower.includes(".mp4") ||
-lower.includes(".webm") ||
-lower.includes(".mov") ||
-lower.includes(".m4v")
-){
-
-const video =
-document.createElement("video");
-
-video.src = url;
-
-video.controls = true;
-
-card.appendChild(video);
-
-}
-
-else{
-
-const img =
-document.createElement("img");
-
-img.src = url;
-
-img.alt =
-post.Title || "Post";
-
-card.appendChild(img);
-
-}
-
-}
-
-const title =
-document.createElement("h3");
-
-title.textContent =
-post.Title || "Untitled";
-
-const content =
-document.createElement("p");
-
-content.textContent =
-post.Content || "";
-
-card.appendChild(title);
-
-card.appendChild(content);
-
-const actions =
-document.createElement("div");
-
-actions.className =
-"actions";
-
-const editBtn =
-document.createElement("button");
-
-editBtn.className =
-"edit-btn";
-
-editBtn.textContent =
-"✏️ Edit";
-
-editBtn.onclick =
-function(){
-
-startEdit(post);
-
-};
-
-const deleteBtn =
-document.createElement("button");
-
-deleteBtn.className =
-"delete-btn";
-
-deleteBtn.textContent =
-"🗑️ Delete";
-
-deleteBtn.onclick =
-function(){
-
-deletePost(post);
-
-};
-
-actions.appendChild(editBtn);
-
-actions.appendChild(deleteBtn);
-
-card.appendChild(actions);
-
-postsContainer.appendChild(card);
-
-});
-
-}
 
 
 /* =========================
-EDIT
+   EDIT
 ========================= */
 
 function startEdit(post){
 
-editingId =
-post.id;
+  editingId =
+    post.id;
 
-oldMediaUrl =
-post.Image_url || null;
 
-titleInput.value =
-post.Title || "";
+  oldMediaUrl =
+    post.Image_url ||
+    null;
 
-contentInput.value =
-post.Content || "";
 
-mediaInput.value =
-"";
+  titleInput.value =
+    post.Title ||
+    "";
 
-preview.innerHTML = "";
 
-formTitle.textContent =
-"Edit Post";
+  contentInput.value =
+    post.Content ||
+    "";
 
-publishBtn.textContent =
-"Update Post";
 
-cancelBtn.style.display =
-"block";
+  mediaInput.value =
+    "";
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+
+  preview.innerHTML =
+    "";
+
+
+  formTitle.textContent =
+    "Edit Post";
+
+
+  publishBtn.textContent =
+    "Update Post";
+
+
+  cancelBtn.style.display =
+    "block";
+
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:"smooth"
+
+  });
 
 }
 
+
+
+/* =========================
+   CANCEL EDIT
+========================= */
 
 cancelBtn.addEventListener(
 "click",
@@ -1135,289 +1426,374 @@ resetForm
 
 function resetForm(){
 
-editingId = null;
+  editingId =
+    null;
 
-oldMediaUrl = null;
 
-titleInput.value = "";
+  oldMediaUrl =
+    null;
 
-contentInput.value = "";
 
-mediaInput.value = "";
+  titleInput.value =
+    "";
 
-preview.innerHTML = "";
 
-formTitle.textContent =
-"Create a new post";
+  contentInput.value =
+    "";
 
-publishBtn.textContent =
-"Publish Post";
 
-cancelBtn.style.display =
-"none";
+  mediaInput.value =
+    "";
+
+
+  preview.innerHTML =
+    "";
+
+
+  formTitle.textContent =
+    "Create a new post";
+
+
+  publishBtn.textContent =
+    "Publish Post";
+
+
+  cancelBtn.style.display =
+    "none";
 
 }
 
 
+
 /* =========================
-DELETE
+   DELETE POST
 ========================= */
 
 async function deletePost(post){
 
-const yes =
-confirm(
-"Are you sure you want to delete this post?"
-);
+  const yes =
+    confirm(
+      "Are you sure you want to delete this post?"
+    );
 
-if(!yes) return;
 
-try{
+  if(!yes){
 
-const result =
-await client
-.from("posts")
-.delete()
-.eq(
-"id",
-post.id
-);
+    return;
 
-if(result.error){
-throw result.error;
+  }
+
+
+  try{
+
+    const result =
+      await client
+      .from("posts")
+      .delete()
+      .eq(
+        "id",
+        post.id
+      );
+
+
+    if(result.error){
+
+      throw result.error;
+
+    }
+
+
+    showMessage(
+      "✅ Post deleted successfully.",
+      "success"
+    );
+
+
+    loadPosts();
+
+  }
+
+  catch(error){
+
+    showMessage(
+      "❌ Delete failed: " +
+      error.message,
+      "error"
+    );
+
+  }
+
 }
 
-showMessage(
-"✅ Post deleted successfully.",
-"success"
-);
-
-loadPosts();
-
-}
-
-catch(error){
-
-showMessage(
-"❌ Delete failed: " +
-error.message,
-"error"
-);
-
-}
-
-}
 
 
 /* =========================
-YOUTUBE LIVE
+   YOUTUBE ID
 ========================= */
 
 function getYouTubeId(url){
 
-try{
+  try{
 
-const parsed =
-new URL(url);
+    const parsed =
+      new URL(url);
 
-if(
-parsed.hostname.includes("youtube.com")
-){
 
-return parsed.searchParams.get("v");
+    if(
+      parsed.hostname.includes(
+        "youtube.com"
+      )
+    ){
+
+      return parsed.searchParams.get(
+        "v"
+      );
+
+    }
+
+
+    if(
+      parsed.hostname ===
+      "youtu.be"
+    ){
+
+      return parsed.pathname.substring(
+        1
+      );
+
+    }
+
+
+    return null;
+
+  }
+
+  catch(error){
+
+    return null;
+
+  }
 
 }
 
-if(
-parsed.hostname === "youtu.be"
-){
-
-return parsed.pathname.substring(1);
-
-}
-
-return null;
-
-}
-
-catch(error){
-
-return null;
-
-}
-
-}
 
 
 /* =========================
-SAVE LIVE
+   ACTIVATE LIVE
 ========================= */
 
 saveLiveBtn.addEventListener(
 "click",
 async function(){
 
-const url =
-liveUrl.value.trim();
+  const url =
+    liveUrl.value.trim();
 
-if(!url){
 
-liveMsg(
-"❌ Paste your YouTube Live link first.",
-"error"
-);
+  if(!url){
 
-return;
-}
+    liveMsg(
+      "❌ Paste your YouTube Live link first.",
+      "error"
+    );
 
-const videoId =
-getYouTubeId(url);
+    return;
 
-if(!videoId){
+  }
 
-liveMsg(
-"❌ Invalid YouTube video link.",
-"error"
-);
 
-return;
-}
+  const videoId =
+    getYouTubeId(
+      url
+    );
 
-saveLiveBtn.disabled = true;
 
-liveMsg(
-"Saving Live...",
-"success"
-);
+  if(!videoId){
 
-try{
+    liveMsg(
+      "❌ Invalid YouTube video link.",
+      "error"
+    );
 
-const result =
-await client
-.from("live_stream")
-.upsert(
-{
-id:1,
-youtube_id:videoId,
-active:true
-}
-);
+    return;
 
-if(result.error){
+  }
 
-throw result.error;
 
-}
+  saveLiveBtn.disabled =
+    true;
 
-liveMsg(
-"✅ LIVE activated!",
-"success"
-);
 
-liveStatus.textContent =
-"🔴 LIVE IS ACTIVE";
+  liveMsg(
+    "Saving Live...",
+    "success"
+  );
 
-}
 
-catch(error){
+  try{
 
-liveMsg(
-"❌ " + error.message,
-"error"
-);
+    const result =
+      await client
+      .from("live_stream")
+      .upsert({
 
-}
+        id:1,
 
-saveLiveBtn.disabled = false;
+        video_url:url,
+
+        is_live:true
+
+      });
+
+
+    if(result.error){
+
+      throw result.error;
+
+    }
+
+
+    liveMsg(
+      "✅ LIVE activated!",
+      "success"
+    );
+
+
+    liveStatus.textContent =
+      "🔴 LIVE IS ACTIVE";
+
+  }
+
+  catch(error){
+
+    console.error(
+      error
+    );
+
+
+    liveMsg(
+      "❌ " + error.message,
+      "error"
+    );
+
+  }
+
+
+  saveLiveBtn.disabled =
+    false;
 
 });
 
 
+
 /* =========================
-END LIVE
+   END LIVE
 ========================= */
 
 removeLiveBtn.addEventListener(
 "click",
 async function(){
 
-const result =
-await client
-.from("live_stream")
-.update({
-active:false
-})
-.eq(
-"id",
-1
-);
+  try{
 
-if(result.error){
+    const result =
+      await client
+      .from("live_stream")
+      .update({
 
-liveMsg(
-"❌ " + result.error.message,
-"error"
-);
+        is_live:false
 
-return;
+      })
+      .eq(
+        "id",
+        1
+      );
 
-}
 
-liveMsg(
-"⏹️ Live ended.",
-"success"
-);
+    if(result.error){
 
-liveStatus.textContent =
-"Live is currently OFF";
+      throw result.error;
+
+    }
+
+
+    liveMsg(
+      "⏹️ Live ended.",
+      "success"
+    );
+
+
+    liveStatus.textContent =
+      "Live is currently OFF";
+
+  }
+
+  catch(error){
+
+    liveMsg(
+      "❌ " + error.message,
+      "error"
+    );
+
+  }
 
 });
 
 
+
 /* =========================
-LOAD LIVE
+   LOAD LIVE
 ========================= */
 
 async function loadLive(){
 
-const result =
-await client
-.from("live_stream")
-.select("*")
-.eq(
-"id",
-1
-)
-.maybeSingle();
+  const result =
+    await client
+    .from("live_stream")
+    .select("*")
+    .eq(
+      "id",
+      1
+    )
+    .maybeSingle();
 
-if(result.error){
 
-liveStatus.textContent =
-"Live system not configured yet.";
+  if(result.error){
 
-return;
-}
+    console.error(
+      result.error
+    );
 
-if(
-result.data &&
-result.data.active
-){
 
-liveUrl.value =
-"https://www.youtube.com/watch?v=" +
-result.data.youtube_id;
+    liveStatus.textContent =
+      "Unable to load Live status.";
 
-liveStatus.textContent =
-"🔴 LIVE IS ACTIVE";
+    return;
 
-}
+  }
 
-else{
 
-liveStatus.textContent =
-"Live is currently OFF";
+  if(
+    result.data &&
+    result.data.is_live &&
+    result.data.video_url
+  ){
 
-}
+    liveUrl.value =
+      result.data.video_url;
+
+
+    liveStatus.textContent =
+      "🔴 LIVE IS ACTIVE";
+
+  }
+
+  else{
+
+    liveStatus.textContent =
+      "Live is currently OFF";
+
+  }
 
 }
 
